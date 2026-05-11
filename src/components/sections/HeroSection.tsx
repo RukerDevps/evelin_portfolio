@@ -134,7 +134,7 @@ export const HeroSection = () => {
         .to(
           [mapPiece, shipPiece, landonPiece],
           {
-            opacity: 0.8,
+            opacity: 0.9,
             yPercent: 0,
             duration: 1.1,
             ease: "expo.out",
@@ -245,7 +245,7 @@ export const HeroSection = () => {
           width={768}
           height={1536}
           data-parallax="map-piece"
-          className="absolute right-0 top-[12.2rem] hidden w-[12rem] opacity-85 md:block lg:w-[10rem]"
+          className="absolute right-0 top-[8.2rem] hidden w-[12rem] opacity-85 md:block lg:w-[10rem]"
         />
         <Image
           src={shipImage}
