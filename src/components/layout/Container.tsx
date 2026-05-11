@@ -5,7 +5,7 @@ interface ContainerProps {
 
 export const Container = ({ children, className = "" }: ContainerProps) => {
   return (
-    <div className={`mx-auto w-full max-w-[1320px] ${className}`.trim()}>
+    <div className={`mx-auto w-full ${className}`.trim()}>
       {children}
     </div>
   );

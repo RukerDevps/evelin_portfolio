@@ -66,33 +66,33 @@ export const Nav = ({ className = "" }: NavProps) => {
 
   return (
     <div
-      className={`relative mx-auto min-h-[164px] w-full max-w-[1220px] ${className}`.trim()}
+      className={`relative mx-auto min-h-[164px] w-full max-w-full ${className}`.trim()}
     >
-      <div className="pointer-events-none absolute inset-x-[-4%] top-0 h-[164px] sm:inset-x-[-6%] sm:h-[176px] lg:inset-x-[-8%] lg:h-[190px]">
+      <div className="pointer-events-none absolute left-[50%] top-0 h-[164px] w-[100vw] -translate-x-1/2 sm:h-[176px] lg:h-[190px]">
         <Image
           src={headerPaper}
           alt=""
           priority
           fill
-          sizes="(max-width: 640px) 118vw, (max-width: 1280px) 112vw, 1320px"
+          sizes="100vw"
           className="object-fill object-top"
         />
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-[118px] h-px bg-[rgba(118,103,86,0.08)] sm:top-[126px] lg:top-[134px]">
+      <div className="pointer-events-none absolute left-[50%] top-[118px] h-px w-[100vw] -translate-x-1/2 bg-[rgba(118,103,86,0.08)] sm:top-[126px] lg:top-[134px]">
         <Image
           src={headerPaper}
           alt=""
           priority
           fill
-          sizes="(max-width: 640px) 118vw, (max-width: 1280px) 112vw, 1320px"
+          sizes="100vw"
           className="opacity-0"
         />
       </div>
 
       <nav
         aria-label="Primary"
-        className="relative z-10 flex min-h-[164px] items-start justify-between gap-8 px-8 pb-10 pt-7 sm:px-12 sm:pt-8 lg:px-16 lg:pt-9"
+        className="relative z-10 flex w-full min-h-[164px] items-start justify-between gap-8 px-8 pb-10 pt-7 sm:px-12 sm:pt-8 lg:px-16 lg:pt-9"
       >
         <div className="flex items-center gap-5 pt-2">
           <div className="font-[family-name:var(--font-display)] text-[3rem] leading-none tracking-[-0.06em] text-[#111111] sm:text-[4.1rem]">
@@ -109,17 +109,15 @@ export const Nav = ({ className = "" }: NavProps) => {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleNavigate(item.id)}
-                className={`relative text-[0.95rem] tracking-[0.18em] ${
-                  activeSection === item.id
+                className={`relative text-[0.95rem] tracking-[0.18em] ${activeSection === item.id
                     ? "text-[var(--accent-primary)]"
                     : "text-[var(--text-primary)]"
-                }`}
+                  }`}
               >
                 {item.label}
                 <span
-                  className={`absolute -bottom-2 left-0 h-[2px] rounded-full bg-[var(--accent-primary)] transition-all duration-300 ${
-                    activeSection === item.id ? "w-full" : "w-0"
-                  }`}
+                  className={`absolute -bottom-2 left-0 h-[2px] rounded-full bg-[var(--accent-primary)] transition-all duration-300 ${activeSection === item.id ? "w-full" : "w-0"
+                    }`}
                 />
               </motion.button>
 
