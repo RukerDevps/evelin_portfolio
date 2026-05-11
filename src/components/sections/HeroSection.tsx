@@ -145,54 +145,68 @@ export const HeroSection = () => {
 
       // ── 4. ScrollTrigger parallax (attaches after intro) ─────────────────
       tl.call(() => {
+        const section = sectionRef.current;
+        const base = { trigger: section, start: "top top", end: "bottom top" };
+
+        // ── Nav paper shadow layer — very slow, fades out ──────────────────
         gsap.to("[data-parallax='nav-paper']", {
-          yPercent: -15,
+          yPercent: -22,
+          opacity: 0,
           ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 1,
-          },
+          scrollTrigger: { ...base, scrub: 0.8 },
         });
 
-        gsap.to("[data-parallax='map-piece']", {
-          yPercent: 12,
-          xPercent: -4,
-          rotation: -4,
+        // ── MAP — fast layer (closest to viewer) ───────────────────────────
+        // Travels far in Y, drifts left, rotates more, scales down slightly
+        gsap.timeline({
+          scrollTrigger: { ...base, scrub: 0.6 },
+        }).to("[data-parallax='map-piece']", {
+          yPercent: -55,
+          xPercent: -10,
+          rotation: -10,
+          scale: 0.88,
+          opacity: 0.3,
           ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 1.1,
-          },
         });
 
-        gsap.to("[data-parallax='ship-piece']", {
+        // ── SHIP — mid layer ───────────────────────────────────────────────
+        // Floats diagonally toward bottom-right corner, subtle scale growth
+        gsap.timeline({
+          scrollTrigger: { ...base, scrub: 1.1 },
+        }).to("[data-parallax='ship-piece']", {
+          yPercent: 35,
+          xPercent: 8,
+          rotation: 6,
+          scale: 1.06,
+          opacity: 0.25,
+          ease: "none",
+        });
+
+        // ── LANDON — far background layer (slowest) ────────────────────────
+        // Barely moves in Y, drifts right, very gentle rotation
+        gsap.timeline({
+          scrollTrigger: { ...base, scrub: 2 },
+        }).to("[data-parallax='landon-piece']", {
           yPercent: 18,
           xPercent: 4,
-          rotation: 3,
+          rotation: 2.5,
+          scale: 1.04,
+          opacity: 0.2,
           ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 1.25,
-          },
         });
 
-        gsap.to("[data-parallax='landon-piece']", {
-          yPercent: 14,
-          xPercent: -3,
-          rotation: -2,
+        // ── Portrait — slow upward float (midground anchor) ────────────────
+        gsap.to("[data-hero='portrait']", {
+          yPercent: -8,
           ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 1.2,
-          },
+          scrollTrigger: { ...base, scrub: 1.5 },
+        });
+
+        // ── Text column — gentlest drift (feels pinned) ────────────────────
+        gsap.to("[data-hero='text-col']", {
+          yPercent: -4,
+          ease: "none",
+          scrollTrigger: { ...base, scrub: 2.5 },
         });
       });
     }, sectionRef);
@@ -292,7 +306,7 @@ export const HeroSection = () => {
           </div>
 
           {/* ── Text content ─────────────────────────────────────────────── */}
-          <div className="relative max-w-[40rem]">
+          <div data-hero="text-col" className="relative max-w-[40rem]">
             <p
               data-hero="role"
               className="mb-5 text-sm tracking-[0.32em] text-[var(--text-secondary)]"
