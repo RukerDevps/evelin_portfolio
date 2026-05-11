@@ -31,8 +31,8 @@ Light-mode creative portfolio with a scrapbook/editorial aesthetic. The design l
 
 | Role | Font | Weight | Size | Variable |
 |------|------|--------|------|----------|
-| Display / H1 | Playfair Display or Cormorant Garamond | 400-700 | 48-72px | `--font-display` |
-| Section headers | Playfair Display | 400-600 | 36-48px | `--font-section` |
+| Display / H1 | Bile Demo | 400-700 | 48-72px | `--font-display` |
+| Section headers | Bile Demo | 400-600 | 36-48px | `--font-section` |
 | Subsection headers | Inter or DM Sans | 600 | 24-28px | `--font-heading` |
 | Body text | Inter | 400 | 14-16px | `--font-body` |
 | Caption / Labels | Inter | 500 | 12-13px | `--font-caption` |
