@@ -11,10 +11,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container } from "@/components/layout/Container";
 import { Nav } from "@/components/layout/Nav";
 import { fadeLeft, fadeRight, fadeUp, staggerMedium } from "@/lib/motion";
-import booksImage from "../../../public/images/book-library-with-open-textbook.jpg";
 import landonImage from "../../../public/images/landon.png";
 import mapImage from "../../../public/images/map.png";
-import paperCutImage from "../../../public/images/paper_cutt01.png";
 import portraitImage from "../../../public/images/portrait-happy-woman-with-diary-sitting-cafe.jpg";
 import shipImage from "../../../public/images/ship.png";
 
@@ -117,7 +115,7 @@ export const HeroSection = () => {
       variants={staggerMedium}
       initial="hidden"
       animate="visible"
-      className="relative overflow-hidden px-4 pb-14 pt-4 sm:px-6 lg:px-10"
+      className="relative overflow-hidden px-4 pb-14 pt-0 sm:px-6 lg:px-10"
     >
       <div
         data-parallax="nav-paper"
@@ -138,7 +136,7 @@ export const HeroSection = () => {
           width={768}
           height={1536}
           data-parallax="map-piece"
-          className="absolute right-0 top-[4.2rem] hidden w-[12rem] opacity-85 md:block lg:w-[16rem]"
+          className="absolute right-0 top-[12.2rem] hidden w-[12rem] opacity-85 md:block lg:w-[10rem]"
         />
         <Image
           src={shipImage}
@@ -159,7 +157,7 @@ export const HeroSection = () => {
       </div>
 
       <Container className="relative z-10">
-        <Nav className="mb-8" />
+        <Nav className="mb-4" />
 
         <div className="grid items-center gap-14 lg:min-h-[calc(100vh-11rem)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-18">
           <motion.div variants={fadeRight} className="relative mx-auto w-full max-w-[34rem]">
