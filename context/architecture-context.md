@@ -21,9 +21,9 @@ A **fully static** personal portfolio website built with Next.js (App Router). N
 | **Framework** | Next.js 16+ (App Router) |
 | **Language** | TypeScript (strict mode) |
 | **Styling** | Tailwind CSS v4 |
-| **Animations** | Framer Motion |
+| **Animations** | Framer Motion + GSAP |
 | **Icons** | Lucide React |
-| **Fonts** | `next/font/google` |
+| **Fonts** | `next/font/google` + `next/font/local` |
 | **Hosting** | Vercel — static export |
 
 **Agent Rule:** Do not add any library not listed above without explicit instruction. No UI kits, no component libraries (no shadcn, no MUI, no Radix standalone installs).
@@ -218,19 +218,20 @@ export const fadeIn = {
 
 ## 8. Font Loading
 
-Both fonts are loaded once in `src/app/layout.tsx` using `next/font/google`. Nowhere else.
+Fonts are loaded once in `src/app/layout.tsx` using `next/font/google` and/or `next/font/local`. Nowhere else.
 
 ```ts
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
 
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-display" });
+const bileDemo = localFont({ src: "../../public/fonts/Bile Demo.ttf", variable: "--font-display" });
 const dmSans   = DM_Sans({ subsets: ["latin"], variable: "--font-body" });
 ```
 
 Applied to `<html>` as CSS variable classes:
 
 ```tsx
-<html className={`${playfair.variable} ${dmSans.variable}`}>
+<html className={`${bileDemo.variable} ${dmSans.variable}`}>
 ```
 
 Then consumed in Tailwind via `font-[family-name:var(--font-display)]` or configured in `tailwind.config.ts`.

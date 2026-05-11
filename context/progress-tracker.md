@@ -4,11 +4,11 @@ Update this file after every meaningful implementation change.
 
 ## Current Phase
 
-- Initial setup and planning
+- Building the first custom homepage implementation
 
 ## Current Goal
 
-- Establish the portfolio project baseline and prepare the first custom homepage implementation.
+- Ship the scrapbook-style hero section with navbar, smooth scroll behavior, and animation foundations.
 
 ## Completed
 
@@ -16,24 +16,25 @@ Update this file after every meaningful implementation change.
 - Core stack is installed: Next `16.2.6`, React `19.2.4`, TypeScript, ESLint, and Tailwind CSS `4`.
 - Initial UI direction is documented in `context/ui-context.md` with scrapbook/editorial portfolio styling rules.
 - This progress tracker is now initialized for the project kickoff state.
+- Animation dependencies are installed: `framer-motion`, `gsap`, and `lucide-react`.
+- Architecture context now allows local display fonts via `next/font/local`.
 
 ## In Progress
 
-- Converting project context from placeholders into a usable working baseline.
-- Defining the first implementation sequence for the portfolio landing page.
+- Replacing the starter homepage with the scrapbook hero composition and section scaffolding.
+- Wiring GSAP scroll interactions and Framer Motion entry animations into the landing page.
 
 ## Next Up
 
-- Replace the default starter homepage in `src/app/page.tsx` with the portfolio hero and first content sections.
-- Set up global design tokens and scrapbook-style visual foundations in `src/app/globals.css`.
-- Confirm section order and gather the required real assets for photos, logos, mockups, and certificates.
+- Finish the remaining section content with real project copy and final assets.
+- Expand the placeholder portfolio sections into the full case-study experience.
+- Tune spacing and motion after a visual QA pass across mobile, tablet, and desktop.
 
 ## Open Questions
 
-- What is the final homepage section order: Hero, About, Brands, Work, Spec Ads, Certificates, Contact?
-- Which real assets are already available locally versus still needed?
-- Should the first implementation use placeholder content for missing portfolio visuals?
-- Will this stay a single-page portfolio, or should we expect additional routes later?
+- Which final profile image should replace the current hero placeholder?
+- Which portfolio screenshots and client assets are ready for the full Work section?
+- Should future sections keep the same torn-paper collage density as the hero or breathe more?
 
 ## Architecture Decisions
 
@@ -41,9 +42,10 @@ Update this file after every meaningful implementation change.
 - Keep the architecture simple and content-first until the main portfolio page is built.
 - Treat `context/ui-context.md` as the source of truth for the visual system, including colors, typography, spacing, and component patterns.
 - Extract reusable section and display components after the first homepage pass so the scrapbook style stays consistent.
+- Allow `next/font/local` in the root layout so uploaded display fonts can be used without breaking Next.js font optimization.
+- Allow GSAP alongside Framer Motion specifically for scroll-linked motion and smooth anchor scrolling.
 
 ## Session Notes
 
-- The repository is still close to the starter template and currently contains only the base app files.
-- The visual direction is already defined; the next meaningful build step is the homepage shell and global theme styling.
-- Content planning has started, but final asset availability and content ordering still need confirmation.
+- The first real implementation step is the scrapbook hero with navigation and anchor targets for later sections.
+- The uploaded notebook, torn-paper, and collage assets are sufficient to establish the homepage visual language.
