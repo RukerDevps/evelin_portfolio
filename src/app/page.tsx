@@ -4,10 +4,14 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { WorkSection } from "@/components/sections/WorkSection";
+import { PageIntro } from "@/components/PageIntro";
 
 const Page = () => {
   return (
     <main>
+      {/* Full-screen curtain overlay — GSAP wipes it upward on load */}
+      <PageIntro />
+
       <HeroSection />
       <AboutSection />
       <BrandsSection />
