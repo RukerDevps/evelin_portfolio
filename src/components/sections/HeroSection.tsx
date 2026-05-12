@@ -8,7 +8,6 @@ import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container } from "@/components/layout/Container";
-import { Nav } from "@/components/layout/Nav";
 import landonImage from "../../../public/images/landon.png";
 import mapImage from "../../../public/images/map.png";
 import paperclipImage from "../../../public/images/paperclip.png";
@@ -42,7 +41,6 @@ export const HeroSection = () => {
     const ctx = gsap.context(() => {
       // ── 1. Gather targets ────────────────────────────────────────────────
       const curtain = document.querySelector("[data-page-intro='curtain']");
-      const nav = document.querySelector("[data-hero='nav']");
       const portrait = document.querySelector("[data-hero='portrait']");
       const role = document.querySelector("[data-hero='role']");
       const nameOne = document.querySelector("[data-hero='name-one']");
@@ -55,7 +53,6 @@ export const HeroSection = () => {
       const landonPiece = document.querySelector("[data-parallax='landon-piece']");
 
       // ── 2. Set initial hidden states ────────────────────────────────────
-      gsap.set(nav, { yPercent: -110, opacity: 0 });
       gsap.set(portrait, { xPercent: -6, opacity: 0, scale: 0.97 });
       gsap.set(paperclip, { opacity: 0, rotate: -25, scale: 0.7 });
       gsap.set([role, nameOne, nameTwo, summary, cta], { yPercent: 40, opacity: 0 });
@@ -73,13 +70,6 @@ export const HeroSection = () => {
         duration: 1.1,
         ease: "expo.inOut",
       })
-
-        // Nav descends into place
-        .to(
-          nav,
-          { yPercent: 0, opacity: 1, duration: 0.9, ease: "expo.out" },
-          "-=0.55"
-        )
 
         // Portrait slides in from left, fades up
         .to(
@@ -266,12 +256,7 @@ export const HeroSection = () => {
       </div>
 
       <Container className="relative z-10">
-        {/* Nav gets its own wrapper so GSAP can target it independently */}
-        <div data-hero="nav">
-          <Nav className="mb-4" />
-        </div>
-
-        <div className="grid items-center gap-14 lg:min-h-[calc(100vh-11rem)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-18">
+        <div className="mt-[90px] sm:mt-[110px] lg:mt-[140px] grid items-center gap-14 lg:min-h-[calc(100vh-11rem)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-18">
 
           {/* ── Portrait ────────────────────────────────────────────────── */}
           <div

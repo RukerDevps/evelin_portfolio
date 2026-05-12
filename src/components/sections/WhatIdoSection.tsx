@@ -13,7 +13,7 @@ const ABOUT = {
     "My belief — people don't buy products, they buy stories. They buy experiences. Looking for someone who can think of ideas — big and small, collaborates to create stories that move, shamelessly points out bad grammar and writes with versatility? We might make a great match.",
 };
 
-export const AboutSection = () => {
+export const WhatIdoSection = () => {
   return (
     <section id="about" className="overflow-hidden py-16 lg:py-24 lg:mx-20">
       <Container>

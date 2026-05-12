@@ -1,23 +1,16 @@
 import { AboutSection } from "@/components/sections/AboutSection";
-import { BrandsSection } from "@/components/sections/BrandsSection";
-import { ContactSection } from "@/components/sections/ContactSection";
-import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { WorkSection } from "@/components/sections/WorkSection";
-import { PageIntro } from "@/components/PageIntro";
+import { Nav } from "@/components/layout/Nav";
 
 const Page = () => {
   return (
     <main>
-      {/* Full-screen curtain overlay — GSAP wipes it upward on load */}
-      <PageIntro />
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <Nav className="mb-4" />
+      </div>
 
       <HeroSection />
       <AboutSection />
-      <BrandsSection />
-      <WorkSection />
-      <ExperienceSection />
-      <ContactSection />
     </main>
   );
 };
