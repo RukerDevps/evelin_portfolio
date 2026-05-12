@@ -1,20 +1,20 @@
 # Progress Tracker
 
-_Last updated: 2026-05-11_
+_Last updated: 2026-05-12_
 
 ---
 
 ## Current Phase
 
-**In Progress** — Layout & Styling Polish
+**In Progress** - Section Build-out & Motion Polish
 
 ---
 
 ## Current Goal
 
-Refine layout consistency across all sections — particularly fixing
-horizontal alignment, padding, and container behaviour so every
-section feels visually consistent at all breakpoints (mobile → 1920px).
+Ship the "What I Do" section as a reference-matched horizontal storytelling
+experience, while continuing the broader pass on section composition and
+layout consistency across breakpoints.
 
 ---
 
@@ -34,13 +34,13 @@ section feels visually consistent at all breakpoints (mobile → 1920px).
 - [x] GSAP smooth-scroll on nav item click
 - [x] Framer Motion hover/tap animations on nav buttons
 - [x] Header paper texture image spanning full viewport width
-- [x] Mobile nav (hidden on small screens — desktop-only links visible)
-- [x] Nav full-width fix — `headerPaper` image uses `left-[50%] -translate-x-1/2 w-[100vw]` to escape container constraints
+- [x] Mobile nav toggle implemented
+- [x] Nav full-width fix - `headerPaper` image uses `left-[50%] -translate-x-1/2 w-[100vw]` to escape container constraints
 
 ### Hero Section (`HeroSection.tsx`)
 - [x] Two-column editorial layout (portrait left, text right)
 - [x] GSAP curtain wipe intro animation
-- [x] Staggered reveal: nav → portrait → paperclip → role → name → summary → CTA → background pieces
+- [x] Staggered reveal: nav -> portrait -> paperclip -> role -> name -> summary -> CTA -> background pieces
 - [x] GSAP ScrollTrigger parallax on map, ship, landon, portrait, and text column
 - [x] Sketch underline image on name line two
 - [x] Paperclip decorative accent on portrait
@@ -59,46 +59,54 @@ section feels visually consistent at all breakpoints (mobile → 1920px).
 - [x] Section paper card with `section-paper rounded-[2rem]`
 
 ### Work Section (`WorkSection.tsx`)
-- [x] 3-column grid of work format cards
-- [x] Formats: Website Content, Blog Writing, Social Media Copy
-- [x] Static card layout (no filtering or modal yet)
-- [x] `paper-underline` on section heading
+- [x] Rebuilt as centered editorial "WHAT I DO" section
+- [x] 6 image-led service cards using uploaded `whatido0*` assets
+- [x] GSAP `ScrollTrigger` horizontal pin-and-scroll interaction on desktop
+- [x] Section releases directly into the next section after the final card
+- [x] Arrow controls, pagination dots, and handwritten swipe cue
+- [x] Mobile / reduced-motion fallback uses native horizontal scrolling
 
 ### Experience Section (`ExperienceSection.tsx`)
 - [x] Timeline-style single entry
-- [x] Role: Copywriter & Content Writer — Iravata Technologies (2024–Present)
+- [x] Role: Copywriter & Content Writer - Iravata Technologies (2024-Present)
 - [x] Red left-border timeline indicator
 
 ### Contact Section (`ContactSection.tsx`)
 - [x] `mailto:` CTA link with Mail icon
 - [x] Section paper card styling consistent with rest of page
 
+### Homepage Composition (`page.tsx`)
+- [x] Mounted Brands, Work, Experience, and Contact sections beneath About
+- [x] Restored a real post-work section flow so the horizontal scroll has a clean handoff
+
 ---
 
 ## In Progress
 
-- [ ] **Layout consistency pass** — aligning horizontal padding/margin
+- [ ] **Layout consistency pass** - aligning horizontal padding/margin
   across all sections so they visually line up.
   - `AboutSection` currently has `mx-20` on the `<section>` and `px-20`
-    on the text column — these are overrides being reviewed.
-  - `Container.tsx` is `mx-auto w-full` (no horizontal padding — sections
+    on the text column - these are overrides being reviewed.
+  - `Container.tsx` is `mx-auto w-full` (no horizontal padding - sections
     apply their own via `px-4 sm:px-6 lg:px-10`).
+- [ ] **Section refinement pass** - polish the newly mounted lower-page
+  sections so their spacing and visual weight feel as intentional as Hero
+  and the new Work section.
 
 ---
 
 ## Next Up
 
-- [ ] Work section expanded: add remaining 2 formats (Ad/Video Scripts,
-  Product Descriptions) — currently only 3 of 5 are listed.
-- [ ] Work section: case cards with format label, brand name, description
-  excerpt, and optional image thumbnail.
+- [ ] Review desktop pin duration and card widths on extra-wide screens
+  (1440px+) to ensure the last service lands exactly where intended.
+- [ ] Add optional subtle reveal animation for the Work heading and helper
+  cues once the section enters view.
 - [ ] About section: review/remove the `mx-20` on `<section>` and `px-20`
   on text column (inconsistent with other sections).
-- [ ] Mobile nav: implement hamburger toggle for viewport < `sm`.
 - [ ] Brands section: replace text pills with actual brand logos (SVG/PNG)
   if assets become available.
-- [ ] Scroll-triggered reveal animations for About, Brands, Work, Experience,
-  and Contact sections (currently only Hero has GSAP animations).
+- [ ] Scroll-triggered reveal animations for About, Brands, Experience,
+  and Contact sections (Hero and Work now have GSAP motion).
 - [ ] SEO: `<title>`, `<meta description>`, Open Graph tags in `layout.tsx`.
 - [ ] Lighthouse audit + performance pass.
 - [ ] Final domain / Vercel deployment with custom domain.
@@ -111,7 +119,6 @@ section feels visually consistent at all breakpoints (mobile → 1920px).
   in-page modal / expandable view?
 - Is a profile photo for the About section available (currently using
   `about.png` placeholder)?
-- Should the mobile nav use a slide-in drawer or a full-screen overlay?
 - Do brand logos (SVG/PNG) exist for Herbally Touch, Skora, Volosy?
 - Final custom domain name TBD.
 
@@ -122,20 +129,23 @@ section feels visually consistent at all breakpoints (mobile → 1920px).
 | Decision | Rationale |
 |---|---|
 | Nav uses `left-[50%] -translate-x-1/2 w-[100vw]` for the header paper image | Allows the texture to bleed full-width even when Nav is inside a padded `Container`. |
-| `Container` has no padding — sections own their own `px-*` | Gives each section full control over its horizontal breathing room; avoids double-padding. |
+| `Container` has no padding - sections own their own `px-*` | Gives each section full control over its horizontal breathing room; avoids double-padding. |
 | GSAP used for both intro animations and scroll parallax in Hero | Framer Motion is used for micro-interactions (nav hover/tap); GSAP handles complex sequenced timelines and ScrollTrigger. |
+| Work section uses a pinned GSAP horizontal track only on desktop | Preserves the reference interaction while keeping mobile and reduced-motion behavior simple and accessible. |
 | All section content is static data objects at top of each file | Keeps things simple for v1; can be extracted to a CMS or JSON later. |
-| `AboutSection` wraps in `Container` but also has `mx-20` on section | This is an inconsistency — under active review. |
+| `AboutSection` wraps in `Container` but also has `mx-20` on section | This is an inconsistency under active review. |
 
 ---
 
 ## Session Notes
 
 - Dev server is running (`npm run dev`).
-- Active files: `Container.tsx`, `AboutSection.tsx`.
-- The user has been exploring horizontal alignment — specifically the
-  gap/margin on the About section vs the rest of the page.
-- `Container.tsx` is currently `mx-auto w-full` (no padding) — previously
-  had `px-4` added then reverted.
-- Next immediate task: clean up `AboutSection` padding/margin to match
-  the layout system used by other sections.
+- Active files this session: `WorkSection.tsx`, `page.tsx`,
+  `context/features/What-to-do.md`.
+- The uploaded `whatido0*` images are now the source assets for the
+  horizontal services section.
+- Homepage composition now includes sections below About again, which is
+  required for the horizontal Work section to release into the next section.
+- Next immediate task: review the lower-page spacing system, especially the
+  `AboutSection` margin/padding overrides and how they align with the new
+  Work section.
