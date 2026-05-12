@@ -59,6 +59,12 @@ layout consistency across breakpoints.
 - [x] 4 brands: Herbally Touch, Herbally Touch Ayurveda, Skora, Volosy
 - [x] Section paper card with `section-paper rounded-[2rem]`
 
+### My Brands Section (`MyBrands.tsx`)
+- [x] Added responsive logo grid using 8 local brand images from `public/images`
+- [x] Mobile layout: 2 columns / 4 rows
+- [x] Desktop layout: 4 columns / 2 rows
+- [x] Tablet layout scales to 3 columns for smoother spacing
+
 ### Work Section (`WorkSection.tsx`)
 - [x] Rebuilt as centered editorial "WHAT I DO" section
 - [x] 6 image-led service cards using uploaded `whatido0*` assets
@@ -106,6 +112,7 @@ layout consistency across breakpoints.
   on text column (inconsistent with other sections).
 - [ ] Brands section: replace text pills with actual brand logos (SVG/PNG)
   if assets become available.
+- [ ] Replace placeholder brand names in `MyBrands.tsx` with final client names if required.
 - [ ] Scroll-triggered reveal animations for About, Brands, Experience,
   and Contact sections (Hero and Work now have GSAP motion).
 - [ ] SEO: `<title>`, `<meta description>`, Open Graph tags in `layout.tsx`.
@@ -148,6 +155,7 @@ layout consistency across breakpoints.
 - Homepage composition currently includes Hero, About, and Work on the
   homepage while lower sections remain available as standalone components.
 - About stats now count up once when the section first enters view.
+- `MyBrands.tsx` now uses the uploaded `brand01` to `brand08` logo assets in a responsive grid.
 - Next immediate task: review the lower-page spacing system, especially the
   `AboutSection` margin/padding overrides and how they align with the new
   Work section.

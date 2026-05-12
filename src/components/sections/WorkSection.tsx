@@ -241,7 +241,7 @@ export const WorkSection = () => {
 
   return (
     <section
-      id="works"
+      id="services"
       ref={sectionRef}
       className="relative overflow-hidden px-4 py-16 sm:px-6 lg:px-10 lg:py-24"
     >
@@ -317,7 +317,7 @@ export const WorkSection = () => {
                 ref={trackRef}
                 className="flex h-[40vh] sm:h-auto w-max snap-x snap-mandatory gap-4 px-1 py-2 sm:gap-5 lg:gap-6 lg:px-12 lg:py-4"
               >
-                {WORK_ITEMS.map((item, index) => {
+                {WORK_ITEMS.map((item) => {
                   const Icon = item.icon;
 
                   return (

@@ -10,6 +10,7 @@ import headerPaper from "../../../public/images/header.png";
 const NAV_ITEMS = [
   { id: "home", label: "HOME" },
   { id: "about", label: "ABOUT" },
+  { id: "services", label: "SERVICES" },
   { id: "works", label: "WORKS" },
   { id: "contacts", label: "CONTACTS" },
 ];
