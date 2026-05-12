@@ -24,6 +24,7 @@ import whatido03Image from "../../../public/images/whatido03.jpg";
 import whatido04Image from "../../../public/images/whatido04.jpeg";
 import whatido05Image from "../../../public/images/whatido05.jpg";
 import whatido06Image from "../../../public/images/whatido06.png";
+import { Container } from "../layout/Container";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -244,7 +245,7 @@ export const WorkSection = () => {
       ref={sectionRef}
       className="relative overflow-hidden px-4 py-16 sm:px-6 lg:px-10 lg:py-24"
     >
-      
+      <Container>
         <div
           ref={stageRef}
           className=" relative overflow-hidden rounded-[2.4rem] px-4 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-12"
@@ -264,7 +265,7 @@ export const WorkSection = () => {
                 <span className="h-2 w-2 rounded-full bg-[rgba(230,57,70,0.42)]" />
               </span>
 
-              <h2 className="relative font-[family-name:var(--font-display)] text-[clamp(3rem,8vw,6.4rem)] leading-[0.9] tracking-[-0.05em] text-[var(--text-primary)]">
+              <h2 className="relative font-[family-name:var(--font-display)] text-[clamp(3.5rem,10vw,8.5rem)] leading-[0.9] tracking-[-0.05em] text-[var(--text-primary)]">
                 {SECTION_COPY.title}
                 <Image
                   src={sketchUnderlineImage}
@@ -398,7 +399,7 @@ export const WorkSection = () => {
             </div>
           </div>
         </div>
-     
+     </Container>
     </section>
   );
 };
