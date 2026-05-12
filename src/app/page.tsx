@@ -1,7 +1,4 @@
 import { AboutSection } from "@/components/sections/AboutSection";
-import { BrandsSection } from "@/components/sections/BrandsSection";
-import { ContactSection } from "@/components/sections/ContactSection";
-import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { WorkSection } from "@/components/sections/WorkSection";
 import { Nav } from "@/components/layout/Nav";
@@ -16,7 +13,6 @@ const Page = () => {
       <HeroSection />
       <AboutSection />
       <WorkSection />
-
     </main>
   );
 };

@@ -58,7 +58,7 @@ const WORK_ITEMS: WorkItem[] = [
     title: ["Social Media", "Storytelling"],
     copy:
       "Develop engaging content strategies and storytelling approaches for Instagram, Facebook, YouTube, and websites.",
-    image: whatido03Image,
+    image: whatido04Image,
     imageAlt: "Phone in hand with social media reactions floating around it.",
     icon: Share2,
   },
@@ -66,7 +66,7 @@ const WORK_ITEMS: WorkItem[] = [
     title: ["Product", "Descriptions"],
     copy:
       "Write product descriptions that turn features into relatable benefits customers care about.",
-    image: whatido04Image,
+    image:  whatido03Image,
     imageAlt: "A product bottle styled on a neutral editorial still-life set.",
     icon: NotebookPen,
   },
@@ -74,7 +74,7 @@ const WORK_ITEMS: WorkItem[] = [
     title: ["Captions and", "Taglines"],
     copy:
       "Create captions, taglines, and hooks that grab attention and strengthen brand identity.",
-    image: whatido05Image,
+    image:  whatido06Image,
     imageAlt: "Hand holding a phone with floating social message icons around it.",
     icon: MessageCircleHeart,
   },
@@ -82,7 +82,7 @@ const WORK_ITEMS: WorkItem[] = [
     title: ["Research and", "Analysis"],
     copy:
       "Conduct daily research and audience analysis to create meaningful, informative, and value-driven content.",
-    image: whatido06Image,
+    image: whatido05Image,
     imageAlt: "Notebook, magnifying glass, and pen arranged on a research desk.",
     icon: ScanSearch,
   },

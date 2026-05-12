@@ -52,6 +52,7 @@ layout consistency across breakpoints.
 - [x] Two-column grid: text left, image right
 - [x] Static content wired from `ABOUT` data object
 - [x] `about.png` displayed at `w-[45%]`
+- [x] One-time GSAP counter animation added for the stats row on first scroll into view
 
 ### Brands Section (`BrandsSection.tsx`)
 - [x] Looping brand name pill strip (static, text-based)
@@ -76,8 +77,7 @@ layout consistency across breakpoints.
 - [x] Section paper card styling consistent with rest of page
 
 ### Homepage Composition (`page.tsx`)
-- [x] Mounted Brands, Work, Experience, and Contact sections beneath About
-- [x] Restored a real post-work section flow so the horizontal scroll has a clean handoff
+- [x] Mounted Work beneath About in the current homepage composition
 
 ---
 
@@ -101,6 +101,7 @@ layout consistency across breakpoints.
   (1440px+) to ensure the last service lands exactly where intended.
 - [ ] Add optional subtle reveal animation for the Work heading and helper
   cues once the section enters view.
+- [ ] Review whether the About counters should also fade/translate in with the count-up for a stronger entrance.
 - [ ] About section: review/remove the `mx-20` on `<section>` and `px-20`
   on text column (inconsistent with other sections).
 - [ ] Brands section: replace text pills with actual brand logos (SVG/PNG)
@@ -144,8 +145,9 @@ layout consistency across breakpoints.
   `context/features/What-to-do.md`.
 - The uploaded `whatido0*` images are now the source assets for the
   horizontal services section.
-- Homepage composition now includes sections below About again, which is
-  required for the horizontal Work section to release into the next section.
+- Homepage composition currently includes Hero, About, and Work on the
+  homepage while lower sections remain available as standalone components.
+- About stats now count up once when the section first enters view.
 - Next immediate task: review the lower-page spacing system, especially the
   `AboutSection` margin/padding overrides and how they align with the new
   Work section.
