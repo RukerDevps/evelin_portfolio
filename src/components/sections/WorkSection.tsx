@@ -48,7 +48,7 @@ const WORK_ITEMS: WorkItem[] = [
     imagePosition: "object-[22%_center]",
   },
   {
-    title: ["Blog and Content", "Writing"],
+    title: ["Blogs Content", "Writing"],
     copy:
       "Write and edit blogs, articles, website content, and brand copy that reflect your voice and connect with your audience.",
     image: whatido02Image,
@@ -315,7 +315,7 @@ export const WorkSection = () => {
             >
               <div
                 ref={trackRef}
-                className="flex w-max snap-x snap-mandatory gap-4 px-1 py-2 sm:gap-5 lg:gap-6 lg:px-12 lg:py-4"
+                className="flex h-[40vh] sm:h-auto w-max snap-x snap-mandatory gap-4 px-1 py-2 sm:gap-5 lg:gap-6 lg:px-12 lg:py-4"
               >
                 {WORK_ITEMS.map((item, index) => {
                   const Icon = item.icon;
@@ -352,14 +352,12 @@ export const WorkSection = () => {
 
                           <span className="mt-4 block h-[3px] w-12 rounded-full bg-[var(--accent-primary)]" />
 
-                          <p className="mt-5 text-sm leading-7 text-[var(--text-secondary)] sm:text-[0.96rem]">
+                          <p className="mt-5 text-xs leading-5 sm:leading-7 text-[var(--text-secondary)] sm:text-[0.96rem]">
                             {item.copy}
                           </p>
                         </div>
 
-                        <p className="mt-6 text-[0.68rem] tracking-[0.42em] text-[var(--text-muted)]">
-                          {String(index + 1).padStart(2, "0")}
-                        </p>
+
                       </div>
                     </article>
                   );
