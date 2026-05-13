@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { Services } from "@/components/sections/Services";
 import { Nav } from "@/components/layout/Nav";
 import MyBrands from "@/components/sections/MyBrands";
+import { MyWorks } from "@/components/sections/MyWorks";
 
 const Page = () => {
   return (
@@ -15,6 +16,7 @@ const Page = () => {
       <AboutSection />
       <Services />
       <MyBrands/>
+      <MyWorks />
     </main>
   );
 };
