@@ -4,6 +4,7 @@ import { Services } from "@/components/sections/Services";
 import { Nav } from "@/components/layout/Nav";
 import MyBrands from "@/components/sections/MyBrands";
 import { MyWorks } from "@/components/sections/MyWorks";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 const Page = () => {
   return (
@@ -17,6 +18,7 @@ const Page = () => {
       <Services />
       <MyBrands/>
       <MyWorks />
+      <ContactSection/>
     </main>
   );
 };

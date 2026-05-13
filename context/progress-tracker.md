@@ -24,7 +24,7 @@ layout consistency across breakpoints.
 - [x] Next.js App Router project scaffolded
 - [x] Tailwind CSS + custom CSS variables design system
 - [x] Google Fonts integrated (display, body, handwritten)
-- [x] `Container` layout component (`mx-auto w-full`)
+- [x] `Container` layout component updated to a shared centered wide canvas (`relative mx-auto w-full max-w-[96rem]`)
 - [x] Netlify deployment config (`netlify.toml`)
 - [x] Global CSS variables (`--text-primary`, `--accent-primary`, `--bg-paper`, etc.)
 - [x] Paper/editorial visual utilities (`.paper-button`, `.paper-tape`, `.section-paper`, `.paper-underline`)
@@ -85,8 +85,9 @@ layout consistency across breakpoints.
 - [x] Red left-border timeline indicator
 
 ### Contact Section (`ContactSection.tsx`)
-- [x] `mailto:` CTA link with Mail icon
-- [x] Section paper card styling consistent with rest of page
+- [x] Notebook-style contact card with ruled lines and right-side pink margin
+- [x] Arch-shaped contact portrait with taped photo styling
+- [x] Phone and email contact pills with playful Joey-friendly copy
 
 ### Homepage Composition (`page.tsx`)
 - [x] Mounted Work beneath About in the current homepage composition
@@ -145,7 +146,7 @@ layout consistency across breakpoints.
 | Decision | Rationale |
 |---|---|
 | Nav uses `left-[50%] -translate-x-1/2 w-[100vw]` for the header paper image | Allows the texture to bleed full-width even when Nav is inside a padded `Container`. |
-| `Container` has no padding - sections own their own `px-*` | Gives each section full control over its horizontal breathing room; avoids double-padding. |
+| `Container` uses a shared `max-w-[96rem]` and no internal padding | Keeps the page on a consistent centered canvas while sections still control their own horizontal breathing room and avoid double-padding. |
 | GSAP used for both intro animations and scroll parallax in Hero | Framer Motion is used for micro-interactions (nav hover/tap); GSAP handles complex sequenced timelines and ScrollTrigger. |
 | Work section uses a pinned GSAP horizontal track only on desktop | Preserves the reference interaction while keeping mobile and reduced-motion behavior simple and accessible. |
 | All section content is static data objects at top of each file | Keeps things simple for v1; can be extracted to a CMS or JSON later. |
@@ -165,6 +166,7 @@ layout consistency across breakpoints.
 - About stats now count up once when the section first enters view.
 - `MyBrands.tsx` now uses the uploaded `brand01` to `brand08` logo assets in a responsive grid.
 - `MyWorks.tsx` now uses the uploaded `adsbranding_images0*` and `website_images0*` assets for an alternating sticky-scroll portfolio layout.
+- `ContactSection.tsx` now matches the notebook-style contact feature brief with an arch portrait, ruled-paper background, and phone/email contact rows.
 - Next immediate task: review the lower-page spacing system, especially the
   `AboutSection` margin/padding overrides and how they align with the new
   Work and My Works sections.

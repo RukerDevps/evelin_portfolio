@@ -137,7 +137,6 @@ export const MyWorks = () => {
               start: "top 40%",
               end: "center 51%",
               scrub: true,
-              markers: true,
               invalidateOnRefresh: true,
             },
           });
