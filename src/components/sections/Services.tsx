@@ -96,7 +96,7 @@ const SECTION_COPY = {
   helper: "Swipe to explore",
 };
 
-export const WorkSection = () => {
+export const Services = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const stageRef = useRef<HTMLDivElement | null>(null);
   const viewportRef = useRef<HTMLDivElement | null>(null);
