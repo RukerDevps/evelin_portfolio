@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { InitialLoadGate } from "@/components/layout/InitialLoadGate";
 import "./globals.css";
 
 const bileDemo = localFont({
@@ -28,7 +29,9 @@ const RootLayout = ({
       lang="en"
       className={`${bileDemo.variable} ${kudryashev.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <InitialLoadGate>{children}</InitialLoadGate>
+      </body>
     </html>
   );
 };

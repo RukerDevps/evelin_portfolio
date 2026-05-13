@@ -25,7 +25,9 @@ layout consistency across breakpoints.
 - [x] Tailwind CSS + custom CSS variables design system
 - [x] Google Fonts integrated (display, body, handwritten)
 - [x] `Container` layout component updated to a shared centered wide canvas (`relative mx-auto w-full max-w-[96rem]`)
-- [x] Netlify deployment config (`netlify.toml`)
+- [x] Root-level initial loading gate with preloaded homepage assets and intro video
+- [x] Next dev server allowlist updated with LAN origin `192.168.31.94`
+- [x] Netlify deployment config (`netlify.yml`)
 - [x] Global CSS variables (`--text-primary`, `--accent-primary`, `--bg-paper`, etc.)
 - [x] Paper/editorial visual utilities (`.paper-button`, `.paper-tape`, `.section-paper`, `.paper-underline`)
 
@@ -147,6 +149,7 @@ layout consistency across breakpoints.
 |---|---|
 | Nav uses `left-[50%] -translate-x-1/2 w-[100vw]` for the header paper image | Allows the texture to bleed full-width even when Nav is inside a padded `Container`. |
 | `Container` uses a shared `max-w-[96rem]` and no internal padding | Keeps the page on a consistent centered canvas while sections still control their own horizontal breathing room and avoid double-padding. |
+| The root layout uses a client-side `InitialLoadGate` | The homepage now waits for the intro video and the current set of critical visual assets to preload before revealing the page. |
 | GSAP used for both intro animations and scroll parallax in Hero | Framer Motion is used for micro-interactions (nav hover/tap); GSAP handles complex sequenced timelines and ScrollTrigger. |
 | Work section uses a pinned GSAP horizontal track only on desktop | Preserves the reference interaction while keeping mobile and reduced-motion behavior simple and accessible. |
 | All section content is static data objects at top of each file | Keeps things simple for v1; can be extracted to a CMS or JSON later. |
@@ -167,6 +170,8 @@ layout consistency across breakpoints.
 - `MyBrands.tsx` now uses the uploaded `brand01` to `brand08` logo assets in a responsive grid.
 - `MyWorks.tsx` now uses the uploaded `adsbranding_images0*` and `website_images0*` assets for an alternating sticky-scroll portfolio layout.
 - `ContactSection.tsx` now matches the notebook-style contact feature brief with an arch portrait, ruled-paper background, and phone/email contact rows.
+- The app now shows an initial loading video gate and preloads the current homepage asset set before revealing the main page.
+- Added `netlify.yml` for static Netlify hosting with `npm run build` and `out` publish directory.
 - Next immediate task: review the lower-page spacing system, especially the
   `AboutSection` margin/padding overrides and how they align with the new
   Work and My Works sections.

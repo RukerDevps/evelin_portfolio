@@ -118,3 +118,15 @@ button {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes loaderSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-8%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
