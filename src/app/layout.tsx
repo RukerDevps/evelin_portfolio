@@ -7,6 +7,11 @@ const bileDemo = localFont({
   variable: "--font-display",
 });
 
+const kudryashev = localFont({
+  src: "../../public/fonts/Kudryashev Display Sans.ttf",
+  variable: "--font-kudryashev",
+});
+
 export const metadata: Metadata = {
   title: "Evelin Elizabeth VP | Copywriter Portfolio",
   description:
@@ -21,7 +26,7 @@ const RootLayout = ({
   return (
     <html
       lang="en"
-      className={bileDemo.variable}
+      className={`${bileDemo.variable} ${kudryashev.variable}`}
     >
       <body>{children}</body>
     </html>

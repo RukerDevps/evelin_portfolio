@@ -155,7 +155,7 @@ export const AboutSection = () => {
         >
           {STATS.map(({ value, suffix, label }, i) => (
             <div key={label} className="flex flex-col items-center">
-              <h1 className="text-5xl lg:text-6xl flex items-baseline gap-0.5">
+              <h1 className="text-5xl lg:text-6xl flex items-baseline gap-0.5 font-[family-name:var(--font-kudryashev)]">
                 <SlotCounter
                   ref={(el) => { counterRefs.current[i] = el; }}
                   value={value}
@@ -163,9 +163,9 @@ export const AboutSection = () => {
                   startValueOnce          // keeps start value until first animation
                   duration={1.8}
                 />
-                <span>{suffix}</span>
+                <span className="font-[family-name:var(--font-body)]">{suffix}</span>
               </h1>
-              <p className="text-xl lg:text-2xl text-center mt-2">{label}</p>
+              <p className="text-xl lg:text-2xl text-center mt-2 ">{label}</p>
             </div>
           ))}
         </div>

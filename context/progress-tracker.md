@@ -1,6 +1,6 @@
 # Progress Tracker
 
-_Last updated: 2026-05-12_
+_Last updated: 2026-05-13_
 
 ---
 
@@ -12,7 +12,7 @@ _Last updated: 2026-05-12_
 
 ## Current Goal
 
-Ship the "What I Do" section as a reference-matched horizontal storytelling
+Ship the "My Works" section as a reference-matched sticky-scroll editorial
 experience, while continuing the broader pass on section composition and
 layout consistency across breakpoints.
 
@@ -73,6 +73,12 @@ layout consistency across breakpoints.
 - [x] Arrow controls, pagination dots, and handwritten swipe cue
 - [x] Mobile / reduced-motion fallback uses native horizontal scrolling
 
+### My Works Section (`MyWorks.tsx`)
+- [x] Rebuilt as alternating editorial categories for "Blogs and Scripts" and "Website Content"
+- [x] Added desktop sticky-stack image scroll with GSAP `ScrollTrigger`
+- [x] Added pinned companion content cards with category number, tags, CTA, and thumbnail strip
+- [x] Added mobile/tablet fallback that returns to a readable vertical flow
+
 ### Experience Section (`ExperienceSection.tsx`)
 - [x] Timeline-style single entry
 - [x] Role: Copywriter & Content Writer - Iravata Technologies (2024-Present)
@@ -98,6 +104,7 @@ layout consistency across breakpoints.
 - [ ] **Section refinement pass** - polish the newly mounted lower-page
   sections so their spacing and visual weight feel as intentional as Hero
   and the new Work section.
+- [ ] **My Works content polish** - replace placeholder CTA target and refine copy/images once final project destinations are available.
 
 ---
 
@@ -115,6 +122,7 @@ layout consistency across breakpoints.
 - [ ] Replace placeholder brand names in `MyBrands.tsx` with final client names if required.
 - [ ] Scroll-triggered reveal animations for About, Brands, Experience,
   and Contact sections (Hero and Work now have GSAP motion).
+- [ ] Review `MyWorks` sticky duration and viewport framing on extra-wide screens to ensure each image stack clears cleanly before the next category enters.
 - [ ] SEO: `<title>`, `<meta description>`, Open Graph tags in `layout.tsx`.
 - [ ] Lighthouse audit + performance pass.
 - [ ] Final domain / Vercel deployment with custom domain.
@@ -149,13 +157,14 @@ layout consistency across breakpoints.
 
 - Dev server is running (`npm run dev`).
 - Active files this session: `WorkSection.tsx`, `page.tsx`,
-  `context/features/What-to-do.md`.
+  `MyWorks.tsx`, `context/features/myworks_section.md`.
 - The uploaded `whatido0*` images are now the source assets for the
   horizontal services section.
 - Homepage composition currently includes Hero, About, and Work on the
   homepage while lower sections remain available as standalone components.
 - About stats now count up once when the section first enters view.
 - `MyBrands.tsx` now uses the uploaded `brand01` to `brand08` logo assets in a responsive grid.
+- `MyWorks.tsx` now uses the uploaded `adsbranding_images0*` and `website_images0*` assets for an alternating sticky-scroll portfolio layout.
 - Next immediate task: review the lower-page spacing system, especially the
   `AboutSection` margin/padding overrides and how they align with the new
-  Work section.
+  Work and My Works sections.
