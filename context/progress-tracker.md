@@ -82,12 +82,12 @@ layout consistency across breakpoints.
 - [x] Arrow controls, pagination dots, and handwritten swipe cue
 - [x] Mobile / reduced-motion fallback uses native horizontal scrolling
 
-### My Works Section (`MyWorks.tsx`)
+### My Works Section (`ShowWorks.tsx`)
 
-- [x] Rebuilt as alternating editorial categories for "Blogs and Scripts" and "Website Content"
-- [x] Added desktop sticky-stack image scroll with GSAP `ScrollTrigger`
-- [x] Added pinned companion content cards with category number, tags, CTA, and thumbnail strip
-- [x] Added mobile/tablet fallback that returns to a readable vertical flow
+- [x] Created highly performant `ShowWorks` component to replace heavy horizontal stack scrolls
+- [x] Displays all 3 portfolio images simultaneously in a beautiful responsive scrapbook grid below subtitles
+- [x] Clean vertical layout with tag indicators, CTA buttons, and lined notebook detailed bullets
+- [x] Integrated lightweight single-pass viewport entrance fades via GSAP ScrollTrigger
 
 ### Experience Section (`ExperienceSection.tsx`)
 
@@ -180,4 +180,5 @@ layout consistency across breakpoints.
 - Updated About section's CTA button to scroll directly down to the Experience section sequentially.
 - Embedded a custom GSAP scroll-down CTA ("PROGRESS TO SERVICES") at the bottom of the Experience section to lead into Services.
 - Verified that all entries perfectly include: count, role, company name, start, and end, rendering on custom sticky and notebook paper-style visual frames.
-- Resolved global background stretching issue by adding `background-attachment: fixed` to `body` inside `src/app/globals.css`, keeping notebook paper texture sharp and viewport-bound regardless of overall document height.
+- Resolved global background stretching by using CSS media queries in `src/app/globals.css`. Applied `background-attachment: fixed` strictly to desktop viewports (`@media (min-width: 1024px)`) on `body`, while keeping the native scrolling behavior completely unchanged on mobile and tablet screens to maintain absolute asset responsiveness.
+- Added new `ShowWorks.tsx` component to replace `MyWorks.tsx` on the homepage composition, showing all category images in a beautiful responsive scrapbook polaroid grid directly beneath their subtitles ("Blogs and Scripts", "Website Content"), resolving all scroll lagging issues.

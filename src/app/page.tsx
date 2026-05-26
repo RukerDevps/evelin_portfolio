@@ -4,7 +4,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { Services } from "@/components/sections/Services";
 import { Nav } from "@/components/layout/Nav";
 import MyBrands from "@/components/sections/MyBrands";
-import { MyWorks } from "@/components/sections/MyWorks";
+import { ShowWorks } from "@/components/sections/ShowWorks";
 import { ContactSection } from "@/components/sections/ContactSection";
 
 const Page = () => {
@@ -19,7 +19,7 @@ const Page = () => {
       <ExperienceSection />
       <Services />
       <MyBrands/>
-      <MyWorks />
+      <ShowWorks />
       <ContactSection/>
     </main>
   );
