@@ -19,11 +19,9 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 // ─── Static data ──────────────────────────────────────────────────────────────
 const ABOUT = {
   heading: "ABOUT ME",
-  subtitle: "Full-Time Grammar Sleuth,\nPart-Time Writer",
+  subtitle: "Words have always been more than words to me",
   para1:
-    "I found my love for writing as a kid, and there's been no looking back since. From journalistic copywriting to scripts and social media, I've explored and experimented with all kinds of writing.",
-  para2:
-    "My belief — people don't buy products, they buy stories. They buy experiences. Looking for someone who can think of ideas — big and small, collaborates to create stories that move, shamelessly points out bad grammar and writes with versatility? We might make a great match.",
+    "I'm a copywriter and content writer who believes words should do more than fill space — they should make people feel, move, and remember. I turn ideas into stories that truly connect, whether it's an ad script, a brand message, or a tagline that lingers long after the scroll. My work blends creativity, research, and strategy. I dive deep into understanding audiences because great writing starts with understanding people — and ends with content that inspires.",
 };
 
 const STATS = [
@@ -56,10 +54,10 @@ export const AboutSection = () => {
     return () => ctx.revert(); // clean up on unmount
   }, []);
 
-  const handleScrollToWorks = () => {
-    const workSection = document.getElementById("works");
+  const handleScrollToExperience = () => {
+    const experienceSection = document.getElementById("experience");
 
-    if (!workSection) {
+    if (!experienceSection) {
       return;
     }
 
@@ -67,7 +65,7 @@ export const AboutSection = () => {
       duration: 1,
       ease: "power2.inOut",
       scrollTo: {
-        y: workSection,
+        y: experienceSection,
         offsetY: 36,
       },
     });
@@ -122,16 +120,14 @@ export const AboutSection = () => {
             <p className="mb-5 text-base leading-[1.85] text-[var(--text-secondary)] sm:text-[1.05rem]">
               {ABOUT.para1}
             </p>
-            <p className="text-base leading-[1.85] text-[var(--text-secondary)] sm:text-[1.05rem]">
-              {ABOUT.para2}
-            </p>
+
 
             <button
               type="button"
-              onClick={handleScrollToWorks}
+              onClick={handleScrollToExperience}
               className="paper-button mt-8 inline-flex w-fit items-center gap-3 rounded-full px-7 py-4 text-sm tracking-[0.22em] text-[var(--text-primary)]"
             >
-              <span>SEE WHAT I DO</span>
+              <span>SEE MY EXPERIENCE</span>
               <ArrowDownRight className="size-4" strokeWidth={1.75} />
             </button>
           </div>

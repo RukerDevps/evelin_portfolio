@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/sections/AboutSection";
+import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { Services } from "@/components/sections/Services";
 import { Nav } from "@/components/layout/Nav";
@@ -15,6 +16,7 @@ const Page = () => {
 
       <HeroSection />
       <AboutSection />
+      <ExperienceSection />
       <Services />
       <MyBrands/>
       <MyWorks />

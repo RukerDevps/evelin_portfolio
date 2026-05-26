@@ -27,11 +27,10 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background:
-  
-    url("/images/background_notebook.jpg");
+  background: url("/images/background_notebook.jpg");
   background-size: cover;
   background-position: center top;
+  background-attachment: fixed; /* Pin the background to the viewport to prevent massive stretching as page height increases */
   color: var(--text-primary);
   font-family: var(--font-body), sans-serif;
 }
