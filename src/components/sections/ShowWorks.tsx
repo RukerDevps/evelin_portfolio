@@ -10,9 +10,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container } from "@/components/layout/Container";
 
 import sketchUnderlineImage from "../../../public/images/sketch_underline.png";
-import adsBrandingImage01 from "../../../public/images/adsbranding_images01.jpg";
-import adsBrandingImage02 from "../../../public/images/adsbranding_images02.jpg";
-import adsBrandingImage03 from "../../../public/images/adsbranding_images03.jpg";
 import websiteImage01 from "../../../public/images/website_images01.jpg";
 import websiteImage02 from "../../../public/images/website_images02.jpg";
 import websiteImage03 from "../../../public/images/website_images03.jpg";
@@ -26,6 +23,12 @@ interface WorkImage {
   tapeStyle: string;
 }
 
+interface EmbeddedVideo {
+  title: string;
+  src: string;
+  rotation?: string;
+}
+
 interface WorkCategory {
   number: string;
   title: string;
@@ -35,12 +38,13 @@ interface WorkCategory {
   ctaLabel: string;
   ctaHref: string;
   images: WorkImage[];
+  embeddedVideos?: EmbeddedVideo[];
 }
 
 const WORK_CATEGORIES: WorkCategory[] = [
   {
     number: "01",
-    title: "Blogs and Scripts",
+    title: "Ad and Branding Video Scripts",
     tags: ["EDITORIAL", "STORYTELLING", "SCRIPTING"],
     description:
       "Long-form blog ideas and emotionally led scripts shaped to educate, connect, and leave a clear brand memory behind.",
@@ -50,24 +54,22 @@ const WORK_CATEGORIES: WorkCategory[] = [
     ],
     ctaLabel: "View Project",
     ctaHref: "#contacts",
-    images: [
+    images: [],
+    embeddedVideos: [
       {
-        src: adsBrandingImage01,
-        alt: "Laptop display showing a polished campaign concept for editorial writing and scripts.",
+        title: "Herbally Touch Christmas video reel",
+        src: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1946381916222016%2F&show_text=false&width=267&t=0",
         rotation: "rotate-[-1.5deg] hover:rotate-0",
-        tapeStyle: "paper-tape -top-3.5 left-8 rotate-[-6deg] bg-amber-100/70",
       },
       {
-        src: adsBrandingImage02,
-        alt: "Creative project layout used to showcase narrative-driven blog and script work.",
-        rotation: "rotate-[1deg] hover:rotate-0",
-        tapeStyle: "paper-tape -top-3.5 left-[42%] rotate-[3deg] bg-yellow-100/80",
+        title: "Volosy Care Instagram reel",
+        src: "https://www.instagram.com/reel/DTIJxS6jBaf/embed/",
+        rotation: "rotate-[1.5deg] hover:rotate-0",
       },
       {
-        src: adsBrandingImage03,
-        alt: "Brand storytelling presentation highlighting structured editorial and scripting samples.",
-        rotation: "rotate-[1.8deg] hover:rotate-0",
-        tapeStyle: "paper-tape -top-3.5 right-8 rotate-[-2deg] bg-pink-100/70",
+        title: "Diabetes awareness branding video script for the brand Herbally Touch",
+        src: "https://www.instagram.com/reel/DVGJOkAEhQL/embed/",
+        rotation: "rotate-[1.5deg] hover:rotate-0",
       },
     ],
   },
@@ -163,7 +165,7 @@ export const ShowWorks = () => {
             <article
               key={category.title}
               data-works-fade
-              className="relative w-full border border-[rgba(26,26,26,0.06)] bg-[rgba(255,255,255,0.45)] rounded-[2.5rem] p-6 sm:p-10 lg:p-14 backdrop-blur-[2px] shadow-[var(--shadow-soft)]"
+              className="relative w-full "
             >
               {/* Category Header */}
               <div className="flex flex-col md:flex-row md:items-baseline gap-4 border-b border-[rgba(26,26,26,0.08)] pb-6">
@@ -183,18 +185,57 @@ export const ShowWorks = () => {
                 </div>
               </div>
 
-              {/* Gallery Grid (All 3 Images Shown Side-By-Side) */}
-              <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+              {/* Gallery Grid */}
+              <div
+                className={`mt-10 grid gap-8 lg:gap-10 ${
+                  (category.images.length + (category.embeddedVideos?.length || 0)) === 1
+                    ? "mx-auto max-w-md grid-cols-1"
+                    : (category.images.length + (category.embeddedVideos?.length || 0)) === 2
+                    ? "mx-auto max-w-2xl grid-cols-1 md:grid-cols-2"
+                    : "grid-cols-1 md:grid-cols-3"
+                }`}
+              >
+                {/* Render embedded videos */}
+                {category.embeddedVideos?.map((video, vidIdx) => (
+                  <figure
+                    key={`${category.title}-video-${vidIdx}`}
+                    className={`relative mx-auto w-full max-w-[22rem] transition-all duration-300 ${video.rotation || ""}`}
+                  >
+                    <div className="relative w-full h-full">
+                      <div className="paper-tape absolute -top-3.5 left-1/2 z-30 h-6 w-20 -translate-x-1/2 rotate-[-4deg] bg-amber-100/70" />
+                      <div className="relative rounded-[3.25rem] bg-[#101214] p-[0.5rem] shadow-[0_28px_60px_rgba(0,0,0,0.22)] ring-1 ring-black/8">
+                        <span className="absolute -left-[0.24rem] top-[6.2rem] h-12 w-[0.32rem] rounded-full bg-[#93a7bd]" />
+                        <span className="absolute -left-[0.24rem] top-[9.8rem] h-16 w-[0.32rem] rounded-full bg-[#93a7bd]" />
+                        <span className="absolute -right-[0.24rem] top-[8.6rem] h-20 w-[0.32rem] rounded-full bg-[#93a7bd]" />
+                        <div className="absolute left-1/2 top-4 z-20 h-7 w-28 -translate-x-1/2 rounded-full bg-black shadow-[0_2px_6px_rgba(255,255,255,0.08)]" />
+                        <div className="relative aspect-[8/16] overflow-hidden rounded-[2.7rem] bg-black">
+                          <iframe
+                            src={video.src}
+                            title={video.title}
+                            className="absolute inset-0 h-full w-full border-0"
+                            scrolling="no"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                            allowFullScreen
+                          />
+                          <div className="pointer-events-none absolute inset-0 rounded-[2.7rem] ring-1 ring-white/10" />
+                        </div>
+                      </div>
+                    </div>
+                  </figure>
+                ))}
+
+                {/* Render static images */}
                 {category.images.map((img, imgIdx) => (
                   <figure
                     key={`${category.title}-img-${imgIdx}`}
-                    className={`relative aspect-[4/3] rounded-[1.5rem] border border-[rgba(26,26,26,0.08)] bg-white p-2.5 shadow-md hover:shadow-xl transition-all duration-300 ${img.rotation}`}
+                    className={`relative ${
+                      category.images.length === 1
+                        ? "aspect-[9/16]"
+                        : "aspect-[4/3]"
+                    } transition-all duration-300 ${img.rotation}`}
                   >
-                    {/* Corner Tape Decor */}
-                    <div className={img.tapeStyle} />
-                    
                     {/* Inner image container */}
-                    <div className="relative w-full h-full overflow-hidden rounded-[1rem] bg-[#d8cab6]">
+                    <div className="relative w-full h-full overflow-hidden">
                       <Image
                         src={img.src}
                         alt={img.alt}

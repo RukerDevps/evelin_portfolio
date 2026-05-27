@@ -1,6 +1,6 @@
 # Progress Tracker
 
-_Last updated: 2026-05-13_
+_Last updated: 2026-05-27_
 
 ---
 
@@ -88,6 +88,9 @@ layout consistency across breakpoints.
 - [x] Displays all 3 portfolio images simultaneously in a beautiful responsive scrapbook grid below subtitles
 - [x] Clean vertical layout with tag indicators, CTA buttons, and lined notebook detailed bullets
 - [x] Integrated lightweight single-pass viewport entrance fades via GSAP ScrollTrigger
+- [x] Replaced the static phone image mockup with a purely custom HTML/CSS iPhone frame container
+- [x] Added support for multiple concurrent embedded videos in a side-by-side layout
+- [x] Integrated the Volosy Care Instagram reel alongside the Herbally Touch Facebook reel
 
 ### Experience Section (`ExperienceSection.tsx`)
 
