@@ -35,26 +35,7 @@ const EXPERIENCES: ExperienceItem[] = [
     cardStyle: "rotate-[1.2deg] translate-x-1 lg:translate-x-4 bg-[var(--bg-paper-strong)] border-[rgba(107,88,65,0.12)]",
     tapeLayout: "double",
   },
-  {
-    count: "02",
-    role: "FREELANCE COPYWRITER",
-    company: "CREATIVE BRANDS CO.",
-    start: "2023",
-    end: "2024",
-    copy: "Partnered directly with boutique lifestyle and wellness brands to craft high-impact landing pages, product copywriting, and email marketing sequences. Maintained consistent brand guidelines and increased client conversions.",
-    cardStyle: "rotate-[-1.5deg] lg:-translate-x-4 bg-[#fcf9d2] border-yellow-200/60 shadow-[0_15px_45px_rgba(245,224,80,0.08)]",
-    tapeLayout: "center",
-  },
-  {
-    count: "03",
-    role: "CONTENT WRITING INTERN",
-    company: "DIGITAL PULSE AGENCY",
-    start: "2022",
-    end: "2023",
-    copy: "Researched audience behaviors and SEO content strategies. Penned comprehensive wellness and lifestyle articles while working under senior copywriters to master brand voice adaptation and copy editing workflows.",
-    cardStyle: "rotate-[1deg] translate-x-1 lg:translate-x-2 bg-[#fde9f0] border-pink-200/60 shadow-[0_15px_45px_rgba(245,160,192,0.08)]",
-    tapeLayout: "right",
-  },
+
 ];
 
 export const ExperienceSection = () => {
@@ -151,7 +132,7 @@ export const ExperienceSection = () => {
                   <div className="flex flex-col sm:flex-row items-start gap-6 md:gap-8">
                     {/* Visual Count Circle */}
                     <div className="flex sm:flex-col items-center gap-1.5 shrink-0 self-start sm:self-center">
-                      <span className="font-[family-name:var(--font-display)] text-5xl md:text-6xl text-[var(--accent-primary)] opacity-85 leading-none">
+                      <span className="font-[family-name:var(--font-kudryashev)] text-5xl md:text-6xl text-[var(--accent-primary)] opacity-85 leading-none">
                         {exp.count}
                       </span>
                       <span className="text-[var(--text-muted)] text-[0.62rem] tracking-[0.25em] hidden sm:inline uppercase font-bold">

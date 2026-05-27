@@ -202,7 +202,7 @@ export const ShowWorks = () => {
                     className={`relative mx-auto w-full max-w-[22rem] transition-all duration-300 ${video.rotation || ""}`}
                   >
                     <div className="relative w-full h-full">
-                      <div className="paper-tape absolute -top-3.5 left-1/2 z-30 h-6 w-20 -translate-x-1/2 rotate-[-4deg] bg-amber-100/70" />
+                     
                       <div className="relative rounded-[3.25rem] bg-[#101214] p-[0.5rem] shadow-[0_28px_60px_rgba(0,0,0,0.22)] ring-1 ring-black/8">
                         <span className="absolute -left-[0.24rem] top-[6.2rem] h-12 w-[0.32rem] rounded-full bg-[#93a7bd]" />
                         <span className="absolute -left-[0.24rem] top-[9.8rem] h-16 w-[0.32rem] rounded-full bg-[#93a7bd]" />
@@ -255,29 +255,9 @@ export const ShowWorks = () => {
                   <p className="text-lg leading-[1.8] text-[var(--text-primary)] font-medium">
                     {category.description}
                   </p>
-                  <a
-                    href={category.ctaHref}
-                    className="group mt-8 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--text-primary)] transition-colors duration-300 hover:text-[var(--accent-primary)]"
-                  >
-                    <span className="border-b-2 border-[var(--accent-primary)] pb-1">
-                      {category.ctaLabel}
-                    </span>
-                    <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
+
                 </div>
 
-                {/* Bullets column (Scrapbook lined paper style) */}
-                <div className="relative bg-[var(--bg-paper-strong)] border border-[rgba(107,88,65,0.08)] rounded-[1.5rem] p-6 shadow-sm overflow-hidden">
-                  {/* Subtle red margin line */}
-                  <div className="absolute left-6 top-0 bottom-0 w-px bg-red-400/35" />
-                  <div className="pl-6 space-y-4 text-sm leading-[1.7] text-[var(--text-secondary)]">
-                    {category.sampleDetails.map((detail, dIdx) => (
-                      <p key={dIdx} className="relative before:content-['•'] before:absolute before:-left-4 before:text-[var(--accent-primary)]">
-                        {detail}
-                      </p>
-                    ))}
-                  </div>
-                </div>
               </div>
             </article>
           ))}
