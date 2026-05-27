@@ -91,6 +91,10 @@ layout consistency across breakpoints.
 - [x] Replaced the static phone image mockup with a purely custom HTML/CSS iPhone frame container
 - [x] Added support for multiple concurrent embedded videos in a side-by-side layout
 - [x] Integrated the Volosy Care Instagram reel alongside the Herbally Touch Facebook reel
+- [x] Added Categories 03 (Blog Writing), 04 (Product Descriptions), and 05 (Social Media Copy) using real-world client copy
+- [x] Upgraded static image rendering to use beautiful polaroid white card frames with shadow, padding, and dynamic paper-tape overlays to match the scrapbook design language
+- [x] Replaced the separate right-hand panel with a cohesive single-column description, bullet details list, and animated CTA link buttons for improved readability
+- [x] Wrapped all polaroid static images inside interactive anchor links, allowing users to click directly on sample images to open their live websites, blogs, and social posts in a new tab
 
 ### Experience Section (`ExperienceSection.tsx`)
 

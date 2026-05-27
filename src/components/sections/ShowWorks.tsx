@@ -13,6 +13,10 @@ import sketchUnderlineImage from "../../../public/images/sketch_underline.png";
 import websiteImage01 from "../../../public/images/website_images01.jpg";
 import websiteImage02 from "../../../public/images/website_images02.jpg";
 import websiteImage03 from "../../../public/images/website_images03.jpg";
+import blogImage01 from "../../../public/images/blog01.png";
+import productImage01 from "../../../public/images/product01.png";
+import productImage02 from "../../../public/images/product02.png";
+import posterImage from "../../../public/images/poster.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +25,7 @@ interface WorkImage {
   alt: string;
   rotation: string;
   tapeStyle: string;
+  href?: string;
 }
 
 interface EmbeddedVideo {
@@ -91,18 +96,94 @@ const WORK_CATEGORIES: WorkCategory[] = [
         alt: "Website homepage content presented inside a soft editorial laptop mockup.",
         rotation: "rotate-[1deg] hover:rotate-0",
         tapeStyle: "paper-tape -top-3.5 left-10 rotate-[5deg] bg-yellow-100/80",
+        href: "#contacts",
       },
       {
         src: websiteImage02,
         alt: "Landing page content design showing brand storytelling and structured website sections.",
         rotation: "rotate-[-2deg] hover:rotate-0",
         tapeStyle: "paper-tape -top-3.5 left-[40%] rotate-[-4deg] bg-amber-100/70",
+        href: "#contacts",
       },
       {
         src: websiteImage03,
         alt: "Website content showcase with product storytelling and supporting content blocks.",
         rotation: "rotate-[1.2deg] hover:rotate-0",
         tapeStyle: "paper-tape -top-3.5 right-12 rotate-[8deg] bg-pink-100/70",
+        href: "#contacts",
+      },
+    ],
+  },
+  {
+    number: "03",
+    title: "Blog Writing",
+    tags: ["AYURVEDA", "WELLNESS", "SEO BLOG"],
+    description:
+      "Wrote an educational blog for Volosy exploring the benefits of Amla and Aloe Vera as a mighty Ayurvedic duo for hair health.",
+    sampleDetails: [
+      "Simplifies scientific and traditional insights into an engaging, reader-friendly format.",
+      "Highlights how this ingredient combination is incorporated into the Volosy Hair Oil to support hair strengthening, scalp nourishment, and hair fall reduction.",
+    ],
+    ctaLabel: "Read Blog",
+    ctaHref: "https://volosycare.com/amla-aloe-vera-the-mighty-duo-your-hairs-been-waiting-for/",
+    images: [
+      {
+        src: blogImage01,
+        alt: "Volosy Hair Care Blog: Amla & Aloe Vera, the power duo",
+        rotation: "rotate-[1deg] hover:rotate-0",
+        tapeStyle: "paper-tape -top-3.5 left-12 rotate-[3deg] bg-yellow-100/80",
+        href: "https://volosycare.com/amla-aloe-vera-the-mighty-duo-your-hairs-been-waiting-for/",
+      },
+    ],
+  },
+  {
+    number: "04",
+    title: "Product Descriptions",
+    tags: ["AYURVEDA", "COPYWRITING", "E-COMMERCE"],
+    description:
+      "Persuasive and clear product page copy for Ayurvedic medicines and natural personal care collections.",
+    sampleDetails: [
+      "Aller T by Herbally Touch: Crafted benefit-led messaging, ingredient breakdowns, and actionable FAQs for an Ayurvedic allergy formula.",
+      "Body Care Kit by Herbally Touch: Wrote copy focusing on natural ingredients and everyday skin nourishment for a soap, body wash, and bath scrubber trio.",
+    ],
+    ctaLabel: "View Aller T",
+    ctaHref: "https://herballytouch.com/product/aller-t/",
+    images: [
+      {
+        src: productImage01,
+        alt: "Aller T allergy medicine by Herbally Touch",
+        rotation: "rotate-[-1.5deg] hover:rotate-0",
+        tapeStyle: "paper-tape -top-3.5 left-8 rotate-[-4deg] bg-amber-100/70",
+        href: "https://herballytouch.com/product/aller-t/",
+      },
+      {
+        src: productImage02,
+        alt: "Body care kit by Herbally Touch",
+        rotation: "rotate-[1.5deg] hover:rotate-0",
+        tapeStyle: "paper-tape -top-3.5 right-8 rotate-[5deg] bg-pink-100/70",
+        href: "https://herballytouch.com/product/body-care-kit/",
+      },
+    ],
+  },
+  {
+    number: "05",
+    title: "Social Media Copy",
+    tags: ["CAMPAIGN", "SOCIAL MEDIA", "COPYWRITING"],
+    description:
+      "Created social media copy for World Food Day awareness content, crafting a powerful tagline that highlights food wastage and global hunger.",
+    sampleDetails: [
+      "Designed to create emotional impact and encourage mindful consumption through a simple, striking visual concept.",
+      "Drafted supporting caption copy focusing on food waste awareness to go alongside the awareness poster.",
+    ],
+    ctaLabel: "View Post",
+    ctaHref: "https://www.instagram.com/p/DP3A0PUiV_F/?igsh=anNqZmdvcmdlOGRr",
+    images: [
+      {
+        src: posterImage,
+        alt: "World Food Day awareness poster",
+        rotation: "rotate-[-1deg] hover:rotate-0",
+        tapeStyle: "paper-tape -top-3.5 left-1/2 -translate-x-1/2 rotate-[-4deg] bg-amber-100/70",
+        href: "https://www.instagram.com/p/DP3A0PUiV_F/?igsh=anNqZmdvcmdlOGRr",
       },
     ],
   },
@@ -225,36 +306,59 @@ export const ShowWorks = () => {
                 ))}
 
                 {/* Render static images */}
-                {category.images.map((img, imgIdx) => (
-                  <figure
-                    key={`${category.title}-img-${imgIdx}`}
-                    className={`relative ${
-                      category.images.length === 1
-                        ? "aspect-[9/16]"
-                        : "aspect-[4/3]"
-                    } transition-all duration-300 ${img.rotation}`}
-                  >
-                    {/* Inner image container */}
-                    <div className="relative w-full h-full overflow-hidden">
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        className="object-cover transition-transform duration-500 hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, 30vw"
-                      />
+                {category.images.map((img, imgIdx) => {
+                  const imageContent = (
+                    <div className="relative w-full h-full overflow-hidden rounded-[1.5rem] bg-white p-[0.35rem] shadow-[0_15px_35px_rgba(0,0,0,0.1)] ring-1 ring-black/5">
+                      <div className="relative w-full h-full overflow-hidden rounded-[1.2rem]">
+                        <Image
+                          src={img.src}
+                          alt={img.alt}
+                          fill
+                          className="object-cover transition-transform duration-500 hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 30vw"
+                        />
+                      </div>
                     </div>
-                  </figure>
-                ))}
+                  );
+
+                  return (
+                    <figure
+                      key={`${category.title}-img-${imgIdx}`}
+                      className={`relative ${
+                        category.images.length === 1
+                          ? "mx-auto w-full max-w-[22rem] aspect-[4/5]"
+                          : "aspect-[4/3]"
+                      } transition-all duration-300 ${img.rotation}`}
+                    >
+                      {/* Tape layout if defined */}
+                      {img.tapeStyle && (
+                        <div className={`${img.tapeStyle} absolute z-30 h-6 w-20`} />
+                      )}
+                      
+                      {img.href ? (
+                        <a
+                          href={img.href}
+                          target={img.href.startsWith("#") ? "_self" : "_blank"}
+                          rel="noopener noreferrer"
+                          className="block w-full h-full cursor-pointer"
+                        >
+                          {imageContent}
+                        </a>
+                      ) : (
+                        imageContent
+                      )}
+                    </figure>
+                  );
+                })}
               </div>
 
               {/* Copywriting Details Section */}
-              <div className="mt-12 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 border-t border-[rgba(26,26,26,0.06)] pt-8">
-                {/* Description column */}
-                <div>
+              <div className="mt-12 border-t border-[rgba(26,26,26,0.06)] pt-8">
+                <div className="max-w-3xl">
                   <p className="text-lg leading-[1.8] text-[var(--text-primary)] font-medium">
                     {category.description}
                   </p>
+
 
                 </div>
 

@@ -94,7 +94,7 @@ export const ExperienceSection = () => {
               alt=""
               aria-hidden="true"
               className="
-                absolute -bottom-3 left-4
+                absolute -bottom-3 left-4 top-28
                 h-auto w-[60%]
                 sm:-bottom-4
               "
