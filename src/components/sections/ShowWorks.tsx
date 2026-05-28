@@ -4,7 +4,6 @@
 
 import { useEffect, useRef } from "react";
 import Image, { type StaticImageData } from "next/image";
-import { ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container } from "@/components/layout/Container";
@@ -75,6 +74,16 @@ const WORK_CATEGORIES: WorkCategory[] = [
         title: "Diabetes awareness branding video script for the brand Herbally Touch",
         src: "https://www.instagram.com/reel/DVGJOkAEhQL/embed/",
         rotation: "rotate-[1.5deg] hover:rotate-0",
+      },
+      {
+        title: "Herbally Touch Flexi Belt Ad - back support belt",
+        src: "https://www.instagram.com/reel/DQq4-C4kglA/embed/",
+        rotation: "rotate-[-1.2deg] hover:rotate-0",
+      },
+      {
+        title: "Herbally Touch Skincare ad - skin nourishment and care",
+        src: "https://www.instagram.com/reel/DX_oHc7ShUJ/embed/",
+        rotation: "rotate-[1.2deg] hover:rotate-0",
       },
     ],
   },

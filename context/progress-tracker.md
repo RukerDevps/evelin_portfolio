@@ -95,6 +95,8 @@ layout consistency across breakpoints.
 - [x] Upgraded static image rendering to use beautiful polaroid white card frames with shadow, padding, and dynamic paper-tape overlays to match the scrapbook design language
 - [x] Replaced the separate right-hand panel with a cohesive single-column description, bullet details list, and animated CTA link buttons for improved readability
 - [x] Wrapped all polaroid static images inside interactive anchor links, allowing users to click directly on sample images to open their live websites, blogs, and social posts in a new tab
+- [x] Added 2 new Instagram Reel ads under Category 01 ("Ad and Branding Video Scripts"): Herbally Touch Flexi Belt ad and Herbally Touch Skincare ad
+
 
 ### Experience Section (`ExperienceSection.tsx`)
 
@@ -189,3 +191,4 @@ layout consistency across breakpoints.
 - Verified that all entries perfectly include: count, role, company name, start, and end, rendering on custom sticky and notebook paper-style visual frames.
 - Resolved global background stretching by using CSS media queries in `src/app/globals.css`. Applied `background-attachment: fixed` strictly to desktop viewports (`@media (min-width: 1024px)`) on `body`, while keeping the native scrolling behavior completely unchanged on mobile and tablet screens to maintain absolute asset responsiveness.
 - Added new `ShowWorks.tsx` component to replace `MyWorks.tsx` on the homepage composition, showing all category images in a beautiful responsive scrapbook polaroid grid directly beneath their subtitles ("Blogs and Scripts", "Website Content"), resolving all scroll lagging issues.
+- Added two new video script entries (Flexi Belt ad and Skincare ad) to the "Ad and Branding Video Scripts" category in `ShowWorks.tsx` with correctly formatted Instagram embed URLs and responsive aspect ratio grid styling.
