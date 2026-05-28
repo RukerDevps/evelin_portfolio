@@ -56,14 +56,6 @@ const WORK_ITEMS: WorkItem[] = [
     icon: FilePenLine,
   },
   {
-    title: ["Social Media", "Storytelling"],
-    copy:
-      "Develop engaging content strategies and storytelling approaches for Instagram, Facebook, YouTube, and websites.",
-    image: whatido04Image,
-    imageAlt: "Phone in hand with social media reactions floating around it.",
-    icon: Share2,
-  },
-  {
     title: ["Product", "Descriptions"],
     copy:
       "Write product descriptions that turn features into relatable benefits customers care about.",

@@ -10,8 +10,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container } from "@/components/layout/Container";
 
 import sketchUnderlineImage from "../../../public/images/sketch_underline.png";
-import websiteImage01 from "../../../public/images/website_images01.jpg";
-import websiteImage02 from "../../../public/images/website_images02.jpg";
+import websiteImage01 from "../../../public/images/website01.png";
+import websiteImage02 from "../../../public/images/website02.png";
 import websiteImage03 from "../../../public/images/website_images03.jpg";
 import blogImage01 from "../../../public/images/blog01.png";
 import productImage01 from "../../../public/images/product01.png";
@@ -96,14 +96,14 @@ const WORK_CATEGORIES: WorkCategory[] = [
         alt: "Website homepage content presented inside a soft editorial laptop mockup.",
         rotation: "rotate-[1deg] hover:rotate-0",
         tapeStyle: "paper-tape -top-3.5 left-10 rotate-[5deg] bg-yellow-100/80",
-        href: "#contacts",
+        href: "https://volosycare.com/about/",
       },
       {
         src: websiteImage02,
         alt: "Landing page content design showing brand storytelling and structured website sections.",
         rotation: "rotate-[-2deg] hover:rotate-0",
         tapeStyle: "paper-tape -top-3.5 left-[40%] rotate-[-4deg] bg-amber-100/70",
-        href: "#contacts",
+        href: "https://skorapure.com/about-us/",
       },
       {
         src: websiteImage03,

@@ -9,14 +9,11 @@ import { Container } from "@/components/layout/Container";
 
 gsap.registerPlugin(ScrollTrigger);
 import sketchUnderlineImage from "../../../public/images/sketch_underline.png";
-import brand01Image from "../../../public/images/brand01.png";
-import brand02Image from "../../../public/images/brand02.png";
-import brand03Image from "../../../public/images/brand03.png";
-import brand04Image from "../../../public/images/brand004.png";
-import brand05Image from "../../../public/images/brand05.png";
-import brand06Image from "../../../public/images/brand06.png";
-import brand07Image from "../../../public/images/brand07.png";
-import brand08Image from "../../../public/images/brand08.png";
+import brand01Image from "../../../public/images/brand01.jpeg";
+import brand02Image from "../../../public/images/brand02.jpeg";
+import brand03Image from "../../../public/images/brand03.jpeg";
+import brand04Image from "../../../public/images/brand04.jpeg";
+
 
 interface BrandItem {
   name: string;
@@ -34,10 +31,7 @@ const BRAND_LOGOS: BrandItem[] = [
   { name: "Brand 02", logo: brand02Image },
   { name: "Brand 03", logo: brand03Image },
   { name: "Brand 04", logo: brand04Image },
-  { name: "Brand 05", logo: brand05Image },
-  { name: "Brand 06", logo: brand06Image },
-  { name: "Brand 07", logo: brand07Image },
-  { name: "Brand 08", logo: brand08Image },
+
 ];
 
 const MyBrands = () => {
@@ -102,7 +96,7 @@ const MyBrands = () => {
                 key={brand.name}
                 className="brand-logo flex min-h-[8.75rem] items-center justify-center rounded-[1.6rem] px-4 py-5 sm:min-h-[10rem] sm:px-5 lg:min-h-[10.75rem] lg:px-6"
               >
-                <div className="relative h-[52px] w-full sm:h-[60px] lg:h-[68px]">
+                <div className="relative h-[52px] w-full sm:h-[60px] lg:h-[168px]">
                   <Image
                     src={brand.logo}
                     alt={`${brand.name} logo`}

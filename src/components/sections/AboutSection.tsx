@@ -21,7 +21,7 @@ const ABOUT = {
   heading: "ABOUT ME",
   subtitle: "Words have always been more than words to me",
   para1:
-    "I'm a copywriter and content writer who believes words should do more than fill space — they should make people feel, move, and remember. I turn ideas into stories that truly connect, whether it's an ad script, a brand message, or a tagline that lingers long after the scroll. My work blends creativity, research, and strategy. I dive deep into understanding audiences because great writing starts with understanding people — and ends with content that inspires.",
+    "I'm a copywriter and content writer who believes words should do more than fill space  they should make people feel, move, and remember. I turn ideas into stories that truly connect, whether it's an ad script, a brand message, or a tagline that lingers long after the scroll. My work blends creativity, research, and strategy. I dive deep into understanding audiences because great writing starts with understanding people and ends with content that inspires.",
 };
 
 const STATS = [
@@ -145,7 +145,7 @@ export const AboutSection = () => {
         </div>
 
         {/* ── Stats row — ScrollTrigger watches THIS div ─────────────────── */}
-        <div
+        {/* <div
           ref={statsRowRef}                       // 👈 GSAP ScrollTrigger anchor
           className="flex flex-col sm:flex-row w-full justify-around mt-16 lg:mt-20 gap-10 sm:gap-4 px-4 sm:px-8 md:px-12"
         >
@@ -164,7 +164,7 @@ export const AboutSection = () => {
               <p className="text-xl lg:text-2xl text-center mt-2 ">{label}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </Container>
     </section>
   );
