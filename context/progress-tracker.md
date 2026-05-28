@@ -96,6 +96,7 @@ layout consistency across breakpoints.
 - [x] Replaced the separate right-hand panel with a cohesive single-column description, bullet details list, and animated CTA link buttons for improved readability
 - [x] Wrapped all polaroid static images inside interactive anchor links, allowing users to click directly on sample images to open their live websites, blogs, and social posts in a new tab
 - [x] Added 2 new Instagram Reel ads under Category 01 ("Ad and Branding Video Scripts"): Herbally Touch Flexi Belt ad and Herbally Touch Skincare ad
+- [x] Unified all static work showcase images in categories 02, 03, 04, and 05 to share the same `aspect-[4/3]` landscape crop, generous `max-w-[28rem]` sizing, and expanded 2-column container width (`max-w-4xl`)
 
 
 ### Experience Section (`ExperienceSection.tsx`)
@@ -192,3 +193,4 @@ layout consistency across breakpoints.
 - Resolved global background stretching by using CSS media queries in `src/app/globals.css`. Applied `background-attachment: fixed` strictly to desktop viewports (`@media (min-width: 1024px)`) on `body`, while keeping the native scrolling behavior completely unchanged on mobile and tablet screens to maintain absolute asset responsiveness.
 - Added new `ShowWorks.tsx` component to replace `MyWorks.tsx` on the homepage composition, showing all category images in a beautiful responsive scrapbook polaroid grid directly beneath their subtitles ("Blogs and Scripts", "Website Content"), resolving all scroll lagging issues.
 - Added two new video script entries (Flexi Belt ad and Skincare ad) to the "Ad and Branding Video Scripts" category in `ShowWorks.tsx` with correctly formatted Instagram embed URLs and responsive aspect ratio grid styling.
+- Unified all static images in `ShowWorks.tsx` ("Website Content", "Blog Writing", "Product Descriptions", "Social Media Copy") to share the same landscape aspect ratio (`aspect-[4/3]`) and expanded generous sizing (`max-w-[28rem]`) with grid container widths set to `max-w-4xl` (for 2-column layouts) to ensure perfect visual balance.

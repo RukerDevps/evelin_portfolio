@@ -281,7 +281,7 @@ export const ShowWorks = () => {
                   (category.images.length + (category.embeddedVideos?.length || 0)) === 1
                     ? "mx-auto max-w-md grid-cols-1"
                     : (category.images.length + (category.embeddedVideos?.length || 0)) === 2
-                    ? "mx-auto max-w-2xl grid-cols-1 md:grid-cols-2"
+                    ? "mx-auto max-w-4xl grid-cols-1 md:grid-cols-2"
                     : "grid-cols-1 md:grid-cols-3"
                 }`}
               >
@@ -333,11 +333,7 @@ export const ShowWorks = () => {
                   return (
                     <figure
                       key={`${category.title}-img-${imgIdx}`}
-                      className={`relative ${
-                        category.images.length === 1
-                          ? "mx-auto w-full max-w-[22rem] aspect-[4/5]"
-                          : "aspect-[4/3]"
-                      } transition-all duration-300 ${img.rotation}`}
+                      className={`relative mx-auto w-full max-w-[28rem] aspect-[4/3] transition-all duration-300 ${img.rotation}`}
                     >
                       {/* Tape layout if defined */}
                       {img.tapeStyle && (
