@@ -1,6 +1,6 @@
 # Progress Tracker
 
-_Last updated: 2026-05-27_
+_Last updated: 2026-06-06_
 
 ---
 
@@ -43,14 +43,13 @@ layout consistency across breakpoints.
 
 ### Hero Section (`HeroSection.tsx`)
 
-- [x] Two-column editorial layout (portrait left, text right)
+- [x] Single-column centered editorial layout (portrait and paperclip removed)
 - [x] GSAP curtain wipe intro animation
-- [x] Staggered reveal: nav -> portrait -> paperclip -> role -> name -> summary -> CTA -> background pieces
-- [x] GSAP ScrollTrigger parallax on map, ship, landon, portrait, and text column
+- [x] Staggered reveal: nav -> role -> name -> summary -> CTA -> background pieces (no portrait/paperclip)
+- [x] GSAP ScrollTrigger parallax on map, ship, landon, and text column
 - [x] Sketch underline image on name line two
-- [x] Paperclip decorative accent on portrait
-- [x] Paper border + tape strips on portrait frame
 - [x] Scroll-to-works CTA button with GSAP smooth-scroll
+- [x] Handwritten CTA note with organic rotation (`-rotate-3`)
 
 ### About Section (`AboutSection.tsx`)
 
@@ -194,3 +193,7 @@ layout consistency across breakpoints.
 - Added new `ShowWorks.tsx` component to replace `MyWorks.tsx` on the homepage composition, showing all category images in a beautiful responsive scrapbook polaroid grid directly beneath their subtitles ("Blogs and Scripts", "Website Content"), resolving all scroll lagging issues.
 - Added two new video script entries (Flexi Belt ad and Skincare ad) to the "Ad and Branding Video Scripts" category in `ShowWorks.tsx` with correctly formatted Instagram embed URLs and responsive aspect ratio grid styling.
 - Unified all static images in `ShowWorks.tsx` ("Website Content", "Blog Writing", "Product Descriptions", "Social Media Copy") to share the same landscape aspect ratio (`aspect-[4/3]`) and expanded generous sizing (`max-w-[28rem]`) with grid container widths set to `max-w-4xl` (for 2-column layouts) to ensure perfect visual balance.
+- Removed the portrait image and paperclip decoration from `HeroSection.tsx` per user request, and rearranged the layout into a beautiful single-column centered editorial container (`max-w-[48rem] mx-auto`).
+- Adjusted the Hero section's GSAP intro timeline and parallax scrolls to remove references to the removed elements.
+- Applied responsive typography updates to the Hero text layout and added organic rotation to the handwritten CTA note.
+- Verified build and TypeScript compilation success.

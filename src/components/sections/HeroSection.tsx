@@ -10,8 +10,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container } from "@/components/layout/Container";
 import landonImage from "../../../public/images/landon.png";
 import mapImage from "../../../public/images/map.png";
-import paperclipImage from "../../../public/images/paperclip.png";
-import portraitImage from "../../../public/images/portrait-happy-woman-with-diary-sitting-cafe.jpg";
 import shipImage from "../../../public/images/ship.png";
 import sketchUnderlineImage from "../../../public/images/sketch_underline.png";
 
@@ -41,20 +39,16 @@ export const HeroSection = () => {
     const ctx = gsap.context(() => {
       // ── 1. Gather targets ────────────────────────────────────────────────
       const curtain = document.querySelector("[data-page-intro='curtain']");
-      const portrait = document.querySelector("[data-hero='portrait']");
       const role = document.querySelector("[data-hero='role']");
       const nameOne = document.querySelector("[data-hero='name-one']");
       const nameTwo = document.querySelector("[data-hero='name-two']");
       const summary = document.querySelector("[data-hero='summary']");
       const cta = document.querySelector("[data-hero='cta']");
-      const paperclip = document.querySelector("[data-hero='paperclip']");
       const mapPiece = document.querySelector("[data-parallax='map-piece']");
       const shipPiece = document.querySelector("[data-parallax='ship-piece']");
       const landonPiece = document.querySelector("[data-parallax='landon-piece']");
 
       // ── 2. Set initial hidden states ────────────────────────────────────
-      gsap.set(portrait, { xPercent: -6, opacity: 0, scale: 0.97 });
-      gsap.set(paperclip, { opacity: 0, rotate: -25, scale: 0.7 });
       gsap.set([role, nameOne, nameTwo, summary, cta], { yPercent: 40, opacity: 0 });
       gsap.set([mapPiece, shipPiece, landonPiece], { opacity: 0, yPercent: 8 });
 
@@ -71,25 +65,11 @@ export const HeroSection = () => {
         ease: "expo.inOut",
       })
 
-        // Portrait slides in from left, fades up
-        .to(
-          portrait,
-          { xPercent: 0, opacity: 1, scale: 1, duration: 1.0, ease: "expo.out" },
-          "-=0.65"
-        )
-
-        // Paperclip spins in
-        .to(
-          paperclip,
-          { opacity: 1, rotate: -15, scale: 1, duration: 0.7, ease: "back.out(1.8)" },
-          "-=0.7"
-        )
-
         // Role label
         .to(
           role,
           { yPercent: 0, opacity: 1, duration: 0.65, ease: "expo.out" },
-          "-=0.55"
+          "-=0.65"
         )
 
         // Name line 1
@@ -185,12 +165,7 @@ export const HeroSection = () => {
           ease: "none",
         });
 
-        // ── Portrait — slow upward float (midground anchor) ────────────────
-        gsap.to("[data-hero='portrait']", {
-          yPercent: -8,
-          ease: "none",
-          scrollTrigger: { ...base, scrub: 1.5 },
-        });
+
 
         // ── Text column — gentlest drift (feels pinned) ────────────────────
         gsap.to("[data-hero='text-col']", {
@@ -256,42 +231,10 @@ export const HeroSection = () => {
       </div>
 
       <Container className="relative z-10">
-        <div className="mt-[90px] sm:mt-[110px] lg:mt-[140px] grid items-center gap-14 lg:min-h-[calc(100vh-11rem)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-18">
-
-          {/* ── Portrait ────────────────────────────────────────────────── */}
-          <div
-            data-hero="portrait"
-            className="relative mx-auto w-full max-w-[34rem]"
-          >
-            <div className="relative overflow-hidden border-[12px] border-white bg-[var(--bg-paper-strong)] shadow-[var(--shadow-card)]">
-              <span className="paper-tape paper-tape-left" />
-              <span className="paper-tape paper-tape-right" />
-              <Image
-                src={portraitImage}
-                alt="Editorial placeholder portrait in a cafe setting for the Evelin portfolio hero."
-                priority
-                className="aspect-[4/5] w-full object-cover"
-                sizes="(max-width: 1024px) 90vw, 520px"
-              />
-            </div>
-
-            {/* Paperclip accent */}
-            <div
-              data-hero="paperclip"
-              className="absolute -left-6 -top-6 z-10 w-[5rem] drop-shadow-md sm:-left-8 sm:-top-8 sm:w-[6rem]"
-              style={{ rotate: "-15deg" }}
-            >
-              <Image
-                src={paperclipImage}
-                alt=""
-                className="h-auto w-full"
-                sizes="(max-width: 640px) 5rem, 6rem"
-              />
-            </div>
-          </div>
+        <div className="mt-[90px] sm:mt-[110px] lg:mt-[140px] flex flex-col justify-center lg:min-h-[calc(100vh-11rem)] py-12">
 
           {/* ── Text content ─────────────────────────────────────────────── */}
-          <div data-hero="text-col" className="relative max-w-[40rem]">
+          <div data-hero="text-col" className="relative mx-auto w-full max-w-[48rem]">
             <p
               data-hero="role"
               className="mb-5 text-sm tracking-[0.32em] text-[var(--text-secondary)]"
@@ -315,7 +258,7 @@ export const HeroSection = () => {
 
             <p
               data-hero="summary"
-              className="mt-16 max-w-[34rem] text-lg leading-8 text-[var(--text-secondary)]"
+              className="mt-16 max-w-[38rem] text-lg leading-8 text-[var(--text-secondary)] sm:text-xl sm:leading-9"
             >
               {HERO.summary}
             </p>
@@ -333,7 +276,7 @@ export const HeroSection = () => {
                 <ArrowDownRight className="size-4" strokeWidth={1.75} />
               </button>
 
-              <p className="font-[family-name:var(--font-handwritten)] text-2xl text-[var(--accent-primary)]">
+              <p className="font-[family-name:var(--font-handwritten)] text-2xl text-[var(--accent-primary)] -rotate-3 select-none">
                 {HERO.note}
               </p>
             </div>
