@@ -26,7 +26,7 @@ interface ExperienceItem {
 
 const EXPERIENCES: ExperienceItem[] = [
   {
-    count: "01",
+    count: "03",
     role: "COPYWRITER & CONTENT WRITER",
     company: "IRAVATA TECHNOLOGIES",
     start: "2024",
@@ -46,7 +46,7 @@ const EXPERIENCES: ExperienceItem[] = [
     tapeLayout: "double",
   },
   {
-    count: "03",
+    count: "01",
     role: "EDUCATION",
     company: "Bachelor of Arts in English Language and Literature",
     start: "June 2019",

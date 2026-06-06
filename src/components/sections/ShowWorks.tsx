@@ -114,13 +114,6 @@ const WORK_CATEGORIES: WorkCategory[] = [
         tapeStyle: "paper-tape -top-3.5 left-[40%] rotate-[-4deg] bg-amber-100/70",
         href: "https://skorapure.com/about-us/",
       },
-      {
-        src: websiteImage03,
-        alt: "Website content showcase with product storytelling and supporting content blocks.",
-        rotation: "rotate-[1.2deg] hover:rotate-0",
-        tapeStyle: "paper-tape -top-3.5 right-12 rotate-[8deg] bg-pink-100/70",
-        href: "#contacts",
-      },
     ],
   },
   {
