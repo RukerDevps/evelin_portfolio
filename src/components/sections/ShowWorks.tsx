@@ -138,6 +138,13 @@ const WORK_CATEGORIES: WorkCategory[] = [
     images: [
       {
         src: blogImage01,
+        alt: "More than half the world’s population could be living with fatty liver just 15 years from now.",
+        rotation: "rotate-[1deg] hover:rotate-0",
+        tapeStyle: "paper-tape -top-3.5 left-12 rotate-[3deg] bg-yellow-100/80",
+        href: "https://herballytouch.com/blog/",
+      },
+      {
+        src: websiteImage01,
         alt: "Volosy Hair Care Blog: Amla & Aloe Vera, the power duo",
         rotation: "rotate-[1deg] hover:rotate-0",
         tapeStyle: "paper-tape -top-3.5 left-12 rotate-[3deg] bg-yellow-100/80",
@@ -360,9 +367,9 @@ export const ShowWorks = () => {
               {/* Copywriting Details Section */}
               <div className="mt-12 border-t border-[rgba(26,26,26,0.06)] pt-8">
                 <div className="max-w-3xl">
-                  <p className="text-lg leading-[1.8] text-[var(--text-primary)] font-medium">
+                  {/* <p className="text-lg leading-[1.8] text-[var(--text-primary)] font-medium">
                     {category.description}
-                  </p>
+                  </p> */}
 
 
                 </div>

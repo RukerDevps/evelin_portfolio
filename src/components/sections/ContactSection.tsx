@@ -8,7 +8,7 @@ import sketchUnderlineImage from "../../../public/images/sketch_underline.png";
 
 const CONTACT = {
   name: "Evelin Elizabeth V P",
-  greeting: "Feel free to say hi to Joey and me",
+  greeting: "Let’s build something together Feel free to say hi to Evelin",
   note: "(We don't bite)",
   phoneLabel: "+91 92127 60551",
   phoneHref: "tel:+919212760551",
@@ -71,9 +71,9 @@ export const ContactSection = () => {
                 {CONTACT.greeting}
               </h2>
 
-              <p className="mt-3 font-[family-name:var(--font-handwritten)] text-[1.55rem] text-[var(--accent-primary)] sm:text-[1.8rem]">
+              {/* <p className="mt-3 font-[family-name:var(--font-handwritten)] text-[1.55rem] text-[var(--accent-primary)] sm:text-[1.8rem]">
                 {CONTACT.note}
-              </p>
+              </p> */}
 
               <p className="mt-8 text-sm tracking-[0.3em] text-[var(--text-muted)]">
                 {CONTACT.name}
