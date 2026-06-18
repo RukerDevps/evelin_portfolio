@@ -10,8 +10,8 @@ const CONTACT = {
   name: "Evelin Elizabeth V P",
   greeting: "Let’s build something together Feel free to say hi to Evelin",
   note: "(We don't bite)",
-  phoneLabel: "+91 92127 60551",
-  phoneHref: "tel:+919212760551",
+  phoneLabel: "+91 95627 82923",
+  phoneHref: "tel:+919562782923",
   email: "evelinelizabeth2002@gmail.com",
 };
 

@@ -151,14 +151,14 @@ export const ExperienceSection = () => {
                   {/* Card Content Layout */}
                   <div className="flex flex-col sm:flex-row items-start gap-6 md:gap-8">
                     {/* Visual Count Circle */}
-                    <div className="flex sm:flex-col items-center gap-1.5 shrink-0 self-start sm:self-center">
+                    {/* <div className="flex sm:flex-col items-center gap-1.5 shrink-0 self-start sm:self-center">
                       <span className="font-[family-name:var(--font-kudryashev)] text-5xl md:text-6xl text-[var(--accent-primary)] opacity-85 leading-none">
                         {exp.count}
                       </span>
                       <span className="text-[var(--text-muted)] text-[0.62rem] tracking-[0.25em] hidden sm:inline uppercase font-bold">
                         STAGE
                       </span>
-                    </div>
+                    </div> */}
 
                     {/* Vertical Divider */}
                     <div className="hidden sm:block w-[1.5px] self-stretch bg-[rgba(107,88,65,0.14)] my-1" />
